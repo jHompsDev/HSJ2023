@@ -1,0 +1,89 @@
+title: Start
+position: -213,-729
+---
+I have something to say.
+But now is not the time.
+I fear I am too late.
+
+<< jump Crashlanding >> 
+===
+title: Crashlanding
+position: -213,-556
+---
+Adia: <i> There's so much dust... But I seem to be okay. </i>
+Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
+-> Leave the starship 
+    << jump Leavestarship >> 
+-> Stay onboard. 
+    << jump Stayonboard >> 
+===
+title: Leavestarship
+position: -468,-382
+---
+Mum: Where is Granny?
+Uncle Kito: I thought she was with you, you're always hovering around her.
+Mum: Only because no one else takes responsibility! Don't forget it was your fault we nearly left her behind!
+Uncle Kito: I thought you agreed to take her, besides she's not even part of the family!
+Auntie Zuri: Says who? 
+Mum: That's it, I'm going back in to find her...
+Uncle Kito: Oh, so you want to start now? Where were you while we were crashlanding on planet Who Knows Where?
+Uncle Sefu: I knew we shouldn't have come here, Zuri, they'll never change. We should leave.
+Auntie Zuri: No, I'm not leaving now. We said we'd give this a go... It's been five years.
+Uncle Kito: Five long years, and not a word from you since.
+<<jump Grannyarrives>>
+===
+
+title: Stayonboard
+position: 27,-403
+---
+Adia: <i> I can see Granny still on board the ship. She is cradling a portrait of Grandma. </i>
+Adia: Grandma, we have to leave, the ship isn't save anymore!
+Adia: <i> She can't hear me.  There's rubble between us, I don't seem to be able to push my way through... </i>
+Mum: There's where you are! Come on Granny, we have to leave.
+Granny: I'm sure its fine to stay inside, dear.
+Mum: No, no it is very much not fine. Where is Adia?
+Granny: Maybe she's-
+Mum: Maybe she's waiting outside for us already. Come on.
+Granny: You're the one who asked.
+<<jump Grannyarrives>>
+===
+title: Grannyarrives
+position: -201,-223
+---
+Mum: Right I've got Granny.
+Granny: The only one who has got me is me.
+Uncle Kito: Just keep an eye on her, make sure she doens't wonder off.
+Adia: I can keep an eye on her.
+Mum: Has anyone seen Adia? 
+Adia: Mum?
+Uncle Sefu: Why did you bring her anyway? This was meant to be an adults only reunion so you could finally reconnect with each other.
+Adia: Mum, can you not see me?
+Uncle Sefu: Its not the time to bring a child.
+Mum: Excuse me! Who do you think you are? No one said we couldn't bring our children...
+Mum: And Adia and I deserve this break as much as anyone... She has been working so hard with her younger sisters...
+Adia: <i> I watch Uncle Kito shake his head at this as I stand beside my Mum. </i>
+Uncle Kito: Adia will turn up. She's a teenager, she doesn't need to be so mollycoddled.
+Uncle Kito: In the meantime, we should fetch some resources.
+Granny: I have some tuna we can salvage.
+Auntie Zuri: Why did you bring tuna, Granny?
+Granny: In-case we come across some space cats!
+Uncle Sefu: Hold on a moment, I've managed to locate a cache... 
+Mum: That's awfully far away...
+Uncle Sefu: Its not a problem for me. I'll be back in a few hours... Just try to stay civil for Zuri, okay?
+Auntie Zuri: Hubby...
+Uncle Sefu: You wanted this opportunity... Let's hope everyone makes the most if it, hmm?
+Uncle Kito: In the mean time I'll get some firewood.
+Mum: I'll come with you.
+Auntie Zuri: What about me? 
+Uncle Kito: You stay with Granny.
+Mum: And keep an eye out for Adia.
+<<jump Endofscene1>>
+===
+title: Endofscene1
+position: -152,-73
+---
+Adia: <i> We have crashlanded on a foreign planet. We have low supplies, and everyone is arguing about meaningless things. </i>
+Adia: <i> And for some reason, no one can see nor hear me. </i>
+Adia: <i> I can only feel that there is something very, very wrong. </i>
+Adia: <i> I follow Mum and her older brother, Uncle Kito. Maybe there will be some answers on this strange planet. </i>
+===

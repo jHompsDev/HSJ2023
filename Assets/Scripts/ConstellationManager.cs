@@ -91,7 +91,9 @@ public class ConstellationManager : MonoBehaviour
 
             if (AreStarsClickedPath(out p))
             {
-                p.line.enabled = true;
+                p.SetEnabled();
+
+                if (currentConstellation.CheckIfComplete()) currentConstellation.SetComplete();
 
                 selectedStar = null;
                 TogglePointerLine(false);

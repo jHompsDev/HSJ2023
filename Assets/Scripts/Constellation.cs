@@ -9,6 +9,15 @@ public class Constellation : MonoBehaviour
 
     bool isComplete;
 
+    public bool CheckIfComplete()
+    {
+        bool foo = true;
+
+        foreach (StarPath p in starPaths) if (!p.isEnabled) foo = false;
+
+        return foo;
+    }
+
     public void SetComplete()
     {
         isComplete = true;

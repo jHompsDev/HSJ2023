@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour
     #region VARIABLES
     public static GameManager Instance;
 
-    [SerializeField]UIManager uIManager;
+    [SerializeField]UIManager uiManager;
 
     bool debugMode;
     public bool DebugMode { get => debugMode; }
 
-    GameState state;
+    public GameState state, lastState;
     #endregion
 
     #region FUNCTIONS
@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
 
         if (debugMode) Debug.Log("Initialise!");
 
-        if (uIManager == null) uIManager = FindObjectOfType<UIManager>();
+        if (uiManager == null) uiManager = FindObjectOfType<UIManager>();
 
-        uIManager.Initialize();
+        uiManager.Initialize();
 
         SwitchState(GameState.MAINMENU);
     }
@@ -40,10 +40,14 @@ public class GameManager : MonoBehaviour
                 else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
                 break;
             case GameState.STORY:
-                if (newState == GameState.PAUSE) SwitchState(newState);
+                if (newState == GameState.PAUSE || newState == GameState.STARS) SwitchState(newState);
                 else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
                 break;
             case GameState.PAUSE:
+                if (newState == GameState.STORY || newState == GameState.STARS) SwitchState(newState);
+                else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
+                break;
+            case GameState.STARS:
                 if (newState == GameState.STORY || newState == GameState.PAUSE) SwitchState(newState);
                 else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
                 break;
@@ -53,24 +57,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TrySwitchState()
+    {
+        TrySwitchState(lastState);
+    }
+
     void SwitchState(GameState newState)
     {
         switch (newState)
         {
             case GameState.MAINMENU:
-                uIManager.ToggleMainMenu(true);
-                uIManager.ToggleDialogueUI(false);
+                uiManager.ToggleMainMenu(true);
+                uiManager.ToggleDialogueUI(false);
+                uiManager.TogglePauseUI(false);
                 break;
             case GameState.STORY:
-                uIManager.ToggleMainMenu(false);
-                uIManager.ToggleDialogueUI(true);
+                uiManager.ToggleMainMenu(false);
+                uiManager.ToggleDialogueUI(true);
+                uiManager.TogglePauseUI(false);
                 break;
             case GameState.PAUSE:
-                uIManager.ToggleMainMenu(false);
+                uiManager.ToggleMainMenu(false);
+                uiManager.ToggleDialogueUI(false);
+                uiManager.TogglePauseUI(true);
                 break;
             default: break;
         }
 
+        lastState = state;
         state = newState;
         if (debugMode) Debug.Log("Case Switched to " + newState);
     }
@@ -88,7 +102,16 @@ public class GameManager : MonoBehaviour
 
         Initialise();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (state == GameState.STORY || state == GameState.STARS) TrySwitchState(GameState.PAUSE);
+            else if (state == GameState.PAUSE) TrySwitchState();
+        }
+    }
     #endregion
 }
 
-public enum GameState { MAINMENU, STORY, PAUSE}
+public enum GameState { MAINMENU, STORY, PAUSE, STARS}

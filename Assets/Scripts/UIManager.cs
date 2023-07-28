@@ -44,6 +44,13 @@ public class UIManager : MonoBehaviour
         DialogueRunner.enabled = toggle;
     }
 
+    public void TogglePauseUI(bool toggle)
+    {
+        PauseMenuObject.SetActive(toggle);
+
+        if (GameManager.Instance.DebugMode) Debug.Log("Pause Menu Toggled " + (toggle ? "On" : "Off"));
+    }
+
     #region BUTTONS()
     public void StartButton()
     {
@@ -60,6 +67,16 @@ public class UIManager : MonoBehaviour
     {
         ToggleMainMenu(true);
         ToggleSettingsMenu(false);
+    }
+
+    public void PauseButton()
+    {
+        GameManager.Instance.TrySwitchState(GameState.PAUSE);
+    }
+
+    public void ResumeButton()
+    {
+        GameManager.Instance.TrySwitchState();
     }
 
     public void QuitButton()
