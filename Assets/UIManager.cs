@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]GameObject MainMenuObject; 
+    [SerializeField] GameObject MainMenuObject;
+    [SerializeField] GameObject PauseMenuObject;
+    [SerializeField] GameObject SettingsMenuObject;
 
     public void Initialize()
     {
@@ -17,7 +19,16 @@ public class UIManager : MonoBehaviour
 
     public void ToggleMainMenu(bool toggle)
     {
+        MainMenuObject.SetActive(toggle);
+
         if (GameManager.Instance.DebugMode) Debug.Log("Main Menu Toggled " + (toggle ? "On" : "Off"));
+    }
+
+    public void ToggleSettingsMenu(bool toggle)
+    {
+        SettingsMenuObject.SetActive(toggle);
+
+        if (GameManager.Instance.DebugMode) Debug.Log("Settings Menu Toggled " + (toggle ? "On" : "Off"));
     }
 
     #region BUTTONS()
@@ -28,7 +39,14 @@ public class UIManager : MonoBehaviour
 
     public void OptionsButton()
     {
+        ToggleMainMenu(false);
+        ToggleSettingsMenu(true);
+    }
 
+    public void BackButton()
+    {
+        ToggleMainMenu(true);
+        ToggleSettingsMenu(false);
     }
 
     public void QuitButton()
