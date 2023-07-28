@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Constellation : MonoBehaviour
 {
-    [SerializeField]List<StarPath> starPaths;
+    [SerializeField] public List<StarPath> starPaths;
+    [SerializeField] public List<Star> stars;
 
     bool isComplete;
 

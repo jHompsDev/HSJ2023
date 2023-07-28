@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 433158752}
   - component: {fileID: 433158753}
   m_Layer: 0
-  m_Name: Constellation 1
+  m_Name: Test Constellation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +967,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starPaths:
-  - {fileID: 0}
+  - {fileID: 644737540}
+  - {fileID: 411259241}
+  stars: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3852,7 @@ MonoBehaviour:
   - {fileID: 1248967411}
   - {fileID: 1489396020}
   - {fileID: 956969198}
+  currentConstellation: {fileID: 433158753}
   pointer: {fileID: 872437340}
   hoveredStar: {fileID: 0}
   selectedStar: {fileID: 0}
@@ -3880,7 +3883,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890879116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
