@@ -690,7 +690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OPTIONS
+  m_text: SETTINGS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -966,6 +966,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555203850}
   m_CullTransparentMesh: 1
+--- !u!1 &846728085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7778558435068644802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1677430469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &917883498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2168,7 @@ GameObject:
   - component: {fileID: 1506222526}
   - component: {fileID: 1506222525}
   m_Layer: 5
-  m_Name: Main Menu Options Button
+  m_Name: Main Menu Settings Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2284,6 +2289,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506222523}
   m_CullTransparentMesh: 1
+--- !u!1 &1659362965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3292657645895612461, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1677430469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1677430469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2295,6 +2305,10 @@ PrefabInstance:
     - target: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_Name
       value: Dialogue System
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3183266951831634833, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_RootOrder
@@ -2575,11 +2589,25 @@ MonoBehaviour:
   MainMenuObject: {fileID: 555203850}
   PauseMenuObject: {fileID: 1281545937}
   SettingsMenuObject: {fileID: 27623311}
+  LineView: {fileID: 846728085}
+  OptionsListView: {fileID: 1659362965}
+  DialogueRunner: {fileID: 1747719298}
 --- !u!224 &1724347301 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7084386685998634907, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
   m_PrefabInstance: {fileID: 1677430469}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1747719298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1677430469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1778366389
 GameObject:
   m_ObjectHideFlags: 0

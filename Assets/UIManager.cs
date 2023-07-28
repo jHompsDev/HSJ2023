@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject MainMenuObject;
     [SerializeField] GameObject PauseMenuObject;
     [SerializeField] GameObject SettingsMenuObject;
+
+    [SerializeField] GameObject LineView;
+    [SerializeField] GameObject OptionsListView;
+    [SerializeField] DialogueRunner DialogueRunner;
 
     public void Initialize()
     {
@@ -29,6 +34,14 @@ public class UIManager : MonoBehaviour
         SettingsMenuObject.SetActive(toggle);
 
         if (GameManager.Instance.DebugMode) Debug.Log("Settings Menu Toggled " + (toggle ? "On" : "Off"));
+    }
+
+    public void ToggleDialogueUI(bool toggle)
+    {
+        LineView.SetActive(toggle);
+        OptionsListView.SetActive(toggle);
+
+        DialogueRunner.enabled = toggle;
     }
 
     #region BUTTONS()

@@ -59,9 +59,11 @@ public class GameManager : MonoBehaviour
         {
             case GameState.MAINMENU:
                 uIManager.ToggleMainMenu(true);
+                uIManager.ToggleDialogueUI(false);
                 break;
             case GameState.STORY:
                 uIManager.ToggleMainMenu(false);
+                uIManager.ToggleDialogueUI(true);
                 break;
             case GameState.PAUSE:
                 uIManager.ToggleMainMenu(false);
