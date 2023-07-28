@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,8 +9,9 @@ public class ConstellationManager : MonoBehaviour
 {
     [SerializeField] List<Constellation> constellations;
     [SerializeField] List<Star> stars;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
-    [SerializeField] Constellation currentConstellation;
+    [SerializeField] public Constellation currentConstellation;
 
     [SerializeField] GameObject pointer;
     [SerializeField] Star hoveredStar;
@@ -17,15 +19,21 @@ public class ConstellationManager : MonoBehaviour
 
     [SerializeField] LineRenderer pointerPathRenderer;
 
-    void Initialise()
+    void Initialise(int i = 0)
     {
-        foreach (Constellation c in constellations)
+        currentConstellation = constellations[i];
+        currentConstellation.isComplete = false;
+        spriteRenderer.sprite = currentConstellation.sprite;
+        spriteRenderer.enabled = false;
+
+        stars = FindObjectsOfType<Star>().ToList();
+
+        foreach (Star s in stars) s.gameObject.SetActive(false);
+
+        foreach (StarPath p in currentConstellation.starPaths)
         {
-            foreach (StarPath p in c.starPaths)
-            {
-                if (!c.stars.Contains(p.starA)) c.stars.Add(p.starA);
-                if (!c.stars.Contains(p.starB)) c.stars.Add(p.starB);
-            }
+            if (!p.starA.gameObject.activeSelf) p.starA.gameObject.SetActive(true);
+            if (!p.starB.gameObject.activeSelf) p.starB.gameObject.SetActive(true);
         }
     }
 
@@ -53,7 +61,6 @@ public class ConstellationManager : MonoBehaviour
         {
             if ((p.starA == hoveredStar && p.starB == selectedStar) || (p.starB == hoveredStar && p.starA == selectedStar))
             {
-                Debug.Log("PATH FOUND");
                 path = p;
                 return true;
             }
@@ -61,6 +68,21 @@ public class ConstellationManager : MonoBehaviour
 
         path = null;
         return false;
+    }
+
+    public IEnumerator FadeConstellationIn()
+    {
+        spriteRenderer.color = new Color(1, 1, 1, 0);
+
+        while (spriteRenderer.color.a < 1)
+        {
+            float t = Time.deltaTime / 2f;
+            Debug.Log(t);
+            spriteRenderer.color += new Color(0,0,0,t);
+            yield return null;
+        }
+
+        yield break;
     }
 
     private void Awake()
@@ -93,7 +115,11 @@ public class ConstellationManager : MonoBehaviour
             {
                 p.SetEnabled();
 
-                if (currentConstellation.CheckIfComplete()) currentConstellation.SetComplete();
+                if (currentConstellation.CheckIfComplete())
+                {
+                    currentConstellation.SetComplete();
+                    spriteRenderer.enabled = true;
+                }
 
                 selectedStar = null;
                 TogglePointerLine(false);

@@ -6,8 +6,9 @@ public class Constellation : MonoBehaviour
 {
     [SerializeField] public List<StarPath> starPaths;
     [SerializeField] public List<Star> stars;
+    [SerializeField] public Sprite sprite;
 
-    bool isComplete;
+    public bool isComplete;
 
     public bool CheckIfComplete()
     {
@@ -21,5 +22,7 @@ public class Constellation : MonoBehaviour
     public void SetComplete()
     {
         isComplete = true;
+        StartCoroutine(GameManager.Instance.conManager.FadeConstellationIn());
+        Debug.Log("COMPLETE");
     }
 }

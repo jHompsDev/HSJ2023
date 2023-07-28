@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +11,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]UIManager uiManager;
 
+    [SerializeField] public ConstellationManager conManager;
+
     bool debugMode;
     public bool DebugMode { get => debugMode; }
 
     public GameState state, lastState;
+
+    public static bool test;
     #endregion
 
     #region FUNCTIONS
@@ -70,16 +76,25 @@ public class GameManager : MonoBehaviour
                 uiManager.ToggleMainMenu(true);
                 uiManager.ToggleDialogueUI(false);
                 uiManager.TogglePauseUI(false);
+                conManager.gameObject.SetActive(false);
                 break;
             case GameState.STORY:
                 uiManager.ToggleMainMenu(false);
                 uiManager.ToggleDialogueUI(true);
                 uiManager.TogglePauseUI(false);
+                conManager.gameObject.SetActive(false);
                 break;
             case GameState.PAUSE:
                 uiManager.ToggleMainMenu(false);
                 uiManager.ToggleDialogueUI(false);
                 uiManager.TogglePauseUI(true);
+                conManager.gameObject.SetActive(false);
+                break;
+            case GameState.STARS:
+                uiManager.ToggleMainMenu(false);
+                uiManager.ToggleDialogueUI(false);
+                uiManager.TogglePauseUI(false);
+                conManager.gameObject.SetActive(true);
                 break;
             default: break;
         }
@@ -93,6 +108,33 @@ public class GameManager : MonoBehaviour
     {
         debugMode = var;
     }
+    #endregion
+
+    #region COROUTINES / YARN COMMANDS
+    [YarnCommand("constellation")]
+    public static IEnumerator WaitForConstellation(int index)
+    {
+        Instance.TrySwitchState(GameState.STARS);
+
+        yield return Instance.StartCoroutine(IConstellation(index));
+
+        yield return new WaitForSeconds(5);
+
+        Instance.TrySwitchState(GameState.STORY);
+        
+        yield return null;
+    }
+
+    public static IEnumerator IConstellation(int index)
+    {
+        while (Instance.conManager.currentConstellation.isComplete != true)
+        {
+            yield return null;
+        }
+
+        yield break;
+    }
+
     #endregion
 
     #region MONOBEHAVIOUR
