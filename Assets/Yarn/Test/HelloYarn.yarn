@@ -1,14 +1,19 @@
 ﻿title: Start
 tags:
-position: -263,-354
+position: -529,-725
 ---
-Wow!
-My first ever Yarn script in Unity!
+Narrator: Wow!
+Narrator: My first ever Yarn script in Unity!
 
--> Gosh!
--> Incredible!
--> I'm Amazed!
+-> Narrator: Gosh!
+-> Narrator: Incredible!
+-> Narrator: I'm Amazed!
 
-Anyway, time to get writing!
+Narrator: Anyway, time to get writing!
+<<jump newNode>>
 ===
-
+title: newNode
+position: -264,-724
+---
+Narrator: So this is what happens when you jump from one node to another.
+===
