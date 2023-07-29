@@ -4,7 +4,6 @@ position: -213,-729
 I have something to say.
 But now is not the time.
 I fear I am too late.
-
 << jump Crashlanding >> 
 ===
 title: Crashlanding
@@ -18,7 +17,7 @@ Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
     << jump Stayonboard >> 
 ===
 title: Leavestarship
-position: -468,-382
+position: -464,-334
 ---
 Mum: Where is Granny?
 Uncle Kito: I thought she was with you, you're always hovering around her.
@@ -30,11 +29,10 @@ Uncle Kito: Oh, so you want to start now? Where were you while we were crashland
 Uncle Sefu: I knew we shouldn't have come here, Zuri, they'll never change. We should leave.
 Auntie Zuri: No, I'm not leaving now. We said we'd give this a go... It's been five years.
 Uncle Kito: Five long years, and not a word from you since.
-<<jump Grannyarrives>>
+<< jump Grannyarrives >>
 ===
-
 title: Stayonboard
-position: 27,-403
+position: 19,-326
 ---
 Adia: <i> I can see Granny still on board the ship. She is cradling a portrait of Grandma. </i>
 Adia: Grandma, we have to leave, the ship isn't save anymore!
@@ -45,10 +43,10 @@ Mum: No, no it is very much not fine. Where is Adia?
 Granny: Maybe she's-
 Mum: Maybe she's waiting outside for us already. Come on.
 Granny: You're the one who asked.
-<<jump Grannyarrives>>
+<< jump Grannyarrives >>
 ===
 title: Grannyarrives
-position: -201,-223
+position: -213,-156
 ---
 Mum: Right I've got Granny.
 Granny: The only one who has got me is me.
@@ -77,13 +75,153 @@ Mum: I'll come with you.
 Auntie Zuri: What about me? 
 Uncle Kito: You stay with Granny.
 Mum: And keep an eye out for Adia.
-<<jump Endofscene1>>
+<< jump Endofscene1 >>
 ===
 title: Endofscene1
-position: -152,-73
+position: -212,33
 ---
 Adia: <i> We have crashlanded on a foreign planet. We have low supplies, and everyone is arguing about meaningless things. </i>
 Adia: <i> And for some reason, no one can see nor hear me. </i>
 Adia: <i> I can only feel that there is something very, very wrong. </i>
 Adia: <i> I follow Mum and her older brother, Uncle Kito. Maybe there will be some answers on this strange planet. </i>
+<< jump Scene2 >>
+===
+title: Scene2
+position: -212,237
+---
+Uncle Kito: You can go back, I can handle it.
+Mum: I'd rather be here.
+Uncle Kito: You don't have to.
+Mum: And you don't have to be so difficult. You always resist help. If you accepted my help in the first place...
+Uncle Kito: We wouldn't have crashed? Is that it? You're blaming me?
+Mum: Well-
+Uncle Kito: If Granny didn't adjust the coordinates...
+Mum: Yes but-
+Uncle Kito: And if you could have trusted me...
+Mum: But...
+Uncle Kito: I'm fed up with your perfectionism, Kamili! I had it all under control.
+Mum: All of it?
+Uncle Kito: Yes.
+Mum: The ship is meant to be controlled by at least three people. You took on those roles all by yourself. Can't you see that was too much?
+Adia: <i> I watched my uncle take a deep breath, and sit by a tree. He pressed his hands against his face, while my Mum sat quietly beside him. </i>
+Uncle Kito: Maybe it was too much.
+Mum: Kito... Look at the stars.
+<< jump Complete1 >>
+===
+title: Complete1
+position: -212,425
+---
+Uncle Kito: It looks like Grandma's cooking pot.
+Mum: It brought us altogether, didn't it?
+Uncle Kito: You know, I don't think she ever liked cooking very much.
+Mum: No, you can't be serious. All those recipes she taught us...
+Uncle Kito: Do you ever think she was teaching us out of duty? Because... That's what mothers are meant to do?
+Mum: Put us in a box why don't you?
+Uncle Kito: My wife has never cooked. She despises it. She says its a waste of time.
+Mum: I wanted to ask why she didn't want to join us.
+Uncle Kito: She is working and apparently couldn't get time off.
+Mum: Its important to take a break now and then.
+Uncle Kito: I haven't taken a break since Grandma passed away.
+Mum: Five years without a break? When Harry was alive I was able to find a lot of spare time.
+Uncle Kito: Jina comes from a different circumstance. She fears poverty.
+Mum: I thought you were doing well.
+Uncle Kito: We are. All of our hardwork... It is going straight to our children. But I fear our children will grow to resent us.
+Uncle Kito: I think it is good that you brought Adia with you. It is important children have time to spend with their parents.
+Uncle Kito: I wish I could make different choices. But the bond with my children has already grown distant, and I fell so compelled to take control over the one thing I can.
+Uncle Kito: At least, I am good at working, even if I cannot say the right things to comfort them. I can give them a bright future that they deserve.
+Adia: <i> Uncle Kito... When I am with your children, they always tell me about the times that you cook for them. </i>
+Adia: <i> I think they would like to learn many more recipes from you. </i>
+<< jump Endofscene2 >>
+===
+title: Endofscene2
+position: -212,602
+---
+Adia: <i> I watch Uncle Kito and Mum gather some firewood together. Even though we're on a bizarre planet, they adapt well. </i>
+Adia: <i> I decide there's nothing I can do here, and head back towards the crash site. Maybe Auntie Zuri will notice me. </i>
+<< jump FlashbackScene1 >>
+===
+title: FlashbackScene1
+position: -210,784
+---
+Mum: There she is.
+Uncle Kito: Still sleeping.
+Mum: She must be exhausted.
+Uncle Kito: Its to be expected, considering everything.
+Uncle Kito: Don't worry, Kamili, Adia will come back to us soon.
+Mum: Sleep well, beloved.
+<< jump Scene3 >>
+===
+title: Scene3
+position: -209,972
+---
+Auntie Zuri: How long does it take to gather firewood?
+Granny: These things take as long as they take.
+Auntie Zuri: They are probably talking about me again, aren't they?
+Granny: They might be. But will you stop your pacing, you are making me dizzy.
+Auntie Zuri: I can't stop, it helps keep me calm.
+Granny: Why aren't you so worried? If you keep at it, we'll never see any spacecats.
+Auntie Zuri: Granny, we've crashlanded on an unknown planet, there are no spacecats. Sefu has left for a cache who knows where...
+Granny: But why not make the most of it? Make this part of our holiday.
+Auntie Zuri: This was never a holiday!
+Granny: Then why did you bring me all this way from my home?
+Auntie Zuri: I don't know why we brought you. But the purpose of all this was to reconcil.
+Granny: You're siblings, you don't need to reconcil.
+Adia: <i> I watch Auntie Zuri freeze, and for a moment I wonder if she can see me. She looks pitiful and in pain, until she takes a deep sigh and gazes out into the starry night sky. </i>
+Auntie Zuri: I made a mistake, and Kito and Kamili have never forgiven me.
+Granny: The mistake being, you not turning up to your mother's funeral, yes?
+Auntie Zuri: Yes, that's right.
+Adia: <i> Granny stiffly walks through me and stands besides Auntie Zuri. </i>
+Granny: The stars are beautiful today.
+<< jump Complete2 >>
+===
+title: Complete2
+position: -208,1154
+---
+Auntie Zuri: Do you remember Grandma's singing?
+Granny: Yes.
+Auntie Zuri: I loved it. She sang with her heart.
+Granny: That's one way of putting it.
+Adia: <i> I find myself laughing. Grandma's singing was awful. For a moment, I forget about the destruction behind me. </i>
+Auntie Zuri: I loved her confidence, I loved how she didn't care too much for perfection like Kamili, or professionalism like Kito.
+Auntie Zuri: In that way, she was much more like a free spirit.
+Granny: Zuri, why did you not attend her funeral?
+Auntie Zuri: It wasn't an easy decision. But I thought it was what she would have wanted. You see... I had an audition for a big record label. It had to be for that day. It was finally my opportunity to shine.
+Granny: How did it go?
+Auntie Zuri: Perfectly. I sang every note and put my whole heart into it, and the producer loved me. He signed me that day.
+Granny: Your Grandma would have been very proud.
+Auntie Zuri: No, she wouldn't. Because, the next day, the producer told me I would need a deposit, I emptied out my savings and...
+Granny: Oh dear.
+Auntie Zuri: He left for another planet, and so did my dreams. I have never sung again since.
+Granny: Why didn't you tell your siblings?
+Auntie Zuri: I was ashamed. And when I didn't hear anything from them since the funeral... Well, I knew they must hate me. The next few years was very hard, but then I met Sefu.
+Auntie Zuri: I didn't expect to connect with someone from our home planet, nor did I expect to find someone who wanted to help me. But he supported me, and helped me gain independence too.
+Auntie Zuri: I feel guilty that I needed to rely on him for sometime, but he has never showed me anything but kindness and love.
+Granny: To find love like that is precious, dear. Hold onto it tight.
+Auntie Zuri: Did you ever find love, Granny?
+Granny: Yes I did. And I clung onto it more than anything else. And I have no regrets either.
+Granny: Come now, we may not be able to fix this ship entirely, but there must be a way to make ourselves more comfortable.
+Auntie Zuri: Most of the smoke seems to have cleared now, I will see if I can salvage some things from the ship.
+Granny: Tread lightly, dear.
+Auntie Zuri: Of course, Granny.
+<<jump FlashbackScene2>>
+===
+title: FlashbackScene2
+position: -208,1333
+---
+Auntie Zuri: I've found Adia a pillow to make her more comfortable.
+Mum: Thanks.
+Auntie Zuri: Is she still asleep?
+Mum: I don't know when she'll wake up.
+Auntie Zuri: She looks so peaceful...
+Mum: While our faces are etched in stress.
+Auntie Zuri: I think they're called wrinkles.
+Mum: Hey, are you calling me old?
+Auntie Zuri: Come on, let's go back downstairs. Zito has heated up the tuna.
+Mum: I pray that your husband returns to us soon. I cannot survive on cans of tuna!
+<<jump Scene4>>
+===
+title: Scene4
+position: -209,1514
+---
+La de la
 ===
