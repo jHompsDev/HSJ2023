@@ -84,12 +84,14 @@ public class UIManager : MonoBehaviour
     public void OptionsButton()
     {
         ToggleMainMenu(false);
+        TogglePauseUI(false);
         ToggleSettingsMenu(true);
     }
 
     public void BackButton()
     {
-        ToggleMainMenu(true);
+        if (GameManager.Instance.state == GameState.MAINMENU) ToggleMainMenu(true);
+        else TogglePauseUI(true);
         ToggleSettingsMenu(false);
     }
 

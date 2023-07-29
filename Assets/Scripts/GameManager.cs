@@ -153,7 +153,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (state == GameState.STORY || state == GameState.STARS) TrySwitchState(GameState.PAUSE);
+            if (state == GameState.STORY || state == GameState.STARS)
+            {
+                if (state == GameState.STARS) conManager.firstText.gameObject.SetActive(false);
+                TrySwitchState(GameState.PAUSE);
+            }
             else if (state == GameState.PAUSE) TrySwitchState();
         }
     }

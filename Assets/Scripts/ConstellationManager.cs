@@ -20,7 +20,7 @@ public class ConstellationManager : MonoBehaviour
 
     [SerializeField] LineRenderer pointerPathRenderer;
 
-    [SerializeField] TMP_Text firstText;
+    [SerializeField] public TMP_Text firstText;
 
     public void Initialise(int i = 0)
     {
@@ -88,10 +88,10 @@ public class ConstellationManager : MonoBehaviour
     {
         spriteRenderer.color = new Color(1, 1, 1, 0);
 
-        while (spriteRenderer.color.a < 1f/3)
+        while (spriteRenderer.color.a < 1f / 3)
         {
-            float t = Time.deltaTime * 1f/3;
-            spriteRenderer.color += new Color(0,0,0,t);
+            float t = Time.deltaTime * 1f / 3;
+            spriteRenderer.color += new Color(0, 0, 0, t);
             yield return null;
         }
 
@@ -118,7 +118,7 @@ public class ConstellationManager : MonoBehaviour
         {
             {
                 t += Time.deltaTime / 2;
-                firstText.color = new Color(1, 1, 1, 1-t);
+                firstText.color = new Color(1, 1, 1, 1 - t);
                 yield return null;
             }
         }
