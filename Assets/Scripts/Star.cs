@@ -10,6 +10,8 @@ public class Star : MonoBehaviour
     const float rotSpeed = 180f;
     const float pulseSpeed = 5;
 
+    [SerializeField]SpriteRenderer sprRenderer;
+
     private void OnMouseEnter()
     {
         isHovered = true;
@@ -24,9 +26,8 @@ public class Star : MonoBehaviour
     IEnumerator Animate()
     {
         float t = 0;
-        SpriteRenderer renderer = transform.GetComponentInChildren<SpriteRenderer>();
 
-        renderer.enabled = true;
+        sprRenderer.enabled = true;
 
         while (isHovered)
         {
@@ -34,16 +35,16 @@ public class Star : MonoBehaviour
 
             if (isHovered)
             {
-                renderer.transform.rotation = Quaternion.Euler(0, 0, -rotSpeed * t);
-                renderer.transform.localScale = Vector3.one + (Vector3.one / 4) * Mathf.Sin(t * pulseSpeed);
+                sprRenderer.transform.rotation = Quaternion.Euler(0, 0, -rotSpeed * t);
+                sprRenderer.transform.localScale = Vector3.one + (Vector3.one / 4) * Mathf.Sin(t * pulseSpeed);
             }
 
             yield return null;
         }
 
-        renderer.transform.rotation = Quaternion.identity;
-        renderer.transform.localScale = Vector3.one;
-        renderer.enabled = false;
+        sprRenderer.transform.rotation = Quaternion.identity;
+        sprRenderer.transform.localScale = Vector3.one;
+        sprRenderer.enabled = false;
 
         yield break;
     }

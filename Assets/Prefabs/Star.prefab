@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHovered: 0
+  sprRenderer: {fileID: 6743629005440652910}
 --- !u!198 &4798081817669260755
 ParticleSystem:
   m_ObjectHideFlags: 0
