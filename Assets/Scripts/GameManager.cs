@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
     #region VARIABLES
     public static GameManager Instance;
 
-    [SerializeField]UIManager uiManager;
-
+    [SerializeField]public UIManager uiManager;
     [SerializeField] public ConstellationManager conManager;
 
     bool debugMode;

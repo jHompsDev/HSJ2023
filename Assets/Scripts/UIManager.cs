@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 using Yarn.Unity;
 
@@ -13,6 +14,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject LineView;
     [SerializeField] GameObject OptionsListView;
     [SerializeField] DialogueRunner DialogueRunner;
+
+    [SerializeField] Image Background;
+    [SerializeField] Image BGOverlay;
+
+    [SerializeField] Image ActorRenderer;
+
+    [SerializeField] List<Actor> actors;
+    Actor currentActor;
 
     public void Initialize()
     {
@@ -49,6 +58,21 @@ public class UIManager : MonoBehaviour
         PauseMenuObject.SetActive(toggle);
 
         if (GameManager.Instance.DebugMode) Debug.Log("Pause Menu Toggled " + (toggle ? "On" : "Off"));
+    }
+
+    [YarnCommand("actor")]
+    public static void ChangeActor(string actor)
+    {
+        UIManager ui = GameManager.Instance.uiManager;
+
+        foreach (Actor a in ui.actors)
+        {
+            if (a.name == actor) ui.currentActor = a;
+        }
+
+        if (actor == null) return;
+
+        ui.ActorRenderer.sprite = ui.currentActor.sprite;
     }
 
     #region BUTTONS()
