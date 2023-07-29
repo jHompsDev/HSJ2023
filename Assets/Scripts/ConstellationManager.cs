@@ -88,9 +88,9 @@ public class ConstellationManager : MonoBehaviour
     {
         spriteRenderer.color = new Color(1, 1, 1, 0);
 
-        while (spriteRenderer.color.a < 1)
+        while (spriteRenderer.color.a < 1f/3)
         {
-            float t = Time.deltaTime / 2f;
+            float t = Time.deltaTime * 1f/3;
             spriteRenderer.color += new Color(0,0,0,t);
             yield return null;
         }
@@ -177,6 +177,7 @@ public class ConstellationManager : MonoBehaviour
                 }
                 else
                 {
+                    selectedStar = null;
                     TogglePointerLine(false);
                 }
             }
