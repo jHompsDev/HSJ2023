@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource bgmSource;
     public AudioSource sfxSource;
 
+    public AudioClip testClip;
     public List<AudioKey> sfxSources;
 
     public void PlayBGM()
@@ -24,9 +25,17 @@ public class AudioManager : MonoBehaviour
     [YarnCommand("playSFX")]
     public static void PlaySFX(string s)
     {
-        foreach (AudioKey key in GameManager.Instance.audioManager.sfxSources)
+        AudioManager instance = GameManager.Instance.audioManager;
+
+        foreach (AudioKey key in instance.sfxSources)
         {
-            if (key.key == s) GameManager.Instance.audioManager.PlaySFX(key.clip);
+            if (key.key == s)
+            {
+                instance.PlaySFX(key.clip);
+                return;
+            }
         }
+        
+        instance.PlaySFX(instance.testClip);
     }
 }
