@@ -129,6 +129,8 @@ public class GameManager : MonoBehaviour
 
     public static IEnumerator IConstellation(int index)
     {
+        Instance.conManager.Initialise(index - 1);
+
         while (Instance.conManager.currentConstellation.isComplete != true)
         {
             yield return null;

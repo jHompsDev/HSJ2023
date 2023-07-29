@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -19,12 +20,20 @@ public class ConstellationManager : MonoBehaviour
 
     [SerializeField] LineRenderer pointerPathRenderer;
 
-    void Initialise(int i = 0)
+    [SerializeField] TMP_Text firstText;
+
+    public void Initialise(int i = 0)
     {
         currentConstellation = constellations[i];
         currentConstellation.isComplete = false;
         spriteRenderer.sprite = currentConstellation.sprite;
         spriteRenderer.enabled = false;
+
+        currentConstellation.gameObject.SetActive(true);
+        foreach (Constellation c in constellations)
+        {
+            if (c != currentConstellation) c.gameObject.SetActive(false);
+        }
 
         stars = FindObjectsOfType<Star>().ToList();
 
@@ -34,6 +43,11 @@ public class ConstellationManager : MonoBehaviour
         {
             if (!p.starA.gameObject.activeSelf) p.starA.gameObject.SetActive(true);
             if (!p.starB.gameObject.activeSelf) p.starB.gameObject.SetActive(true);
+        }
+
+        if (i == 0)
+        {
+            StartCoroutine(FadeFirstTimeText());
         }
     }
 
@@ -77,10 +91,40 @@ public class ConstellationManager : MonoBehaviour
         while (spriteRenderer.color.a < 1)
         {
             float t = Time.deltaTime / 2f;
-            Debug.Log(t);
             spriteRenderer.color += new Color(0,0,0,t);
             yield return null;
         }
+
+        yield break;
+    }
+
+    public IEnumerator FadeFirstTimeText()
+    {
+        float t = 0;
+        firstText.gameObject.SetActive(true);
+        firstText.color = new Color(1, 1, 1, 0);
+
+        while (t < 1)
+        {
+            t += Time.deltaTime / 2;
+            firstText.color = new Color(1, 1, 1, t);
+            yield return null;
+        }
+
+        t = 0;
+        yield return new WaitForSeconds(2);
+
+        while (t < 1)
+        {
+            {
+                t += Time.deltaTime / 2;
+                firstText.color = new Color(1, 1, 1, 1-t);
+                yield return null;
+            }
+        }
+
+        firstText.gameObject.SetActive(false);
+        firstText.color = new Color(1, 1, 1, 1);
 
         yield break;
     }
