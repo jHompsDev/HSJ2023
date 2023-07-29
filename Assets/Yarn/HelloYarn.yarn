@@ -208,7 +208,7 @@ Auntie Zuri: Of course, Granny.
 title: FlashbackScene2
 position: -208,1333
 ---
-Auntie Zuri: I've found Adia a pillow to make her more comfortable.
+Auntie Zuri: I've found Adia another pillow to make her more comfortable.
 Mum: Thanks.
 Auntie Zuri: Is she still asleep?
 Mum: I don't know when she'll wake up.
@@ -223,5 +223,114 @@ Mum: I pray that your husband returns to us soon. I cannot survive on cans of tu
 title: Scene4
 position: -209,1514
 ---
-La de la
+Warning, distress signal not received.
+Ship power down to 20%.
+<<jump Scene4Part1>>
+===
+title: Scene4Part1
+position: -208,1697
+---
+Auntie Zuri: Brr, its getting cold. Do you need another blanket, Granny?
+Granny: ...
+Mum: We're back.
+Auntie Zuri: Ah, will this last us the night?
+Mum: We won't last at all if Sefu doesn't come back.
+Auntie Zuri: He's going as fast as he can.
+Uncle Kito: Is he? How do we even know if he found a cache, perhaps he intends to abandon us.
+Auntie Zuri: Can you blame him? All we're doing is arguing.
+Mum: And why is that, do you think?
+Auntie Zuri: Just spit it out! You don't want me here!
+Mum: That's not-
+Auntie Zuri: I don't understand why you invited me on this trip in the first place.
+Uncle Kito: Why did we bother? 
+Mum: Grandma's will.
+Auntie Zuri: What?
+Mum: You never found out, did you, Zuri? In her remaining years, Grandma spent nearly all of her savings.
+Uncle Kito: She left us this humble spaceship, between the three of us.
+Mum: And it has taken us five years to finally meet and decide what to do with it.
+Auntie Zuri: And now its broken...
+Uncle Kito: Beyond compare.
+Mum: Grandma wouldn't have wanted this.
+Adia: <i> Did you ever know what Grandma wanted? </i>
+Adia: <i> You would invite her begrudingly to family dinners, or take her to the park... </i>
+Adia: <i> Where Grandma longed to soar across the skies and the stars.... </i>
+Adia: <i> With Granny. </i>
+Mum: But I wanted peace. That's why I contacted you every year, Zuri, to meet up and go on this one journey together.
+Mum: Only, every time, I had to cancel because...
+Uncle Kito: I was working on the Poseidon Starbase.
+Mum: I thought Granny would want us to gather together. I've worked so hard. It has been a constant struggle to keep afloat with my four girls.
+Auntie Zuri: I'm sorry to hear of Harry's passing, I sent you a message.
+Mum: After all that time Zuri, I didn't know how to respond to you. He was incredible when Granny died.
+Mum: When he passed, all I've done is try to be the perfect mother to my children and...
+Mum: Is it too much to have wanted to at least pretend everything was fine between us? Just for one day?
+Mum: I feel like... I feel like I have been punished. I have nothing but my children... I'm struggling.
+Adia: <i> Mum... Look to the stars. </i>
+Mum: Just... One... Day...
+Uncle Kito: Kamili...
+Auntie Zuri: Sister...
+Adia: <i> Mum... </i>
+Adia: <i> Please, take a moment. </i>
+Mum: Adia...
+Uncle Kito: Take a deep breath.
+Auntie Zuri: Everything is going to be fine.
+Adia: <i> Finally, my Mum leans her head towards the sky, and she too sees her spirit reflected back on her. </i>
+<<jump Complete3>>
+===
+title: Complete3
+position: -208,1884
+---
+Auntie Zuri: Its a proud and beautiful swan.
+Uncle Kito: Do you remember when we all moved to the new planet?
+Auntie Zuri: Yes, you thought the swans were tame.
+Mum: I think Grandma couldn't stop laughing. She did tell you to stand back.
+Uncle Kito: That was so long ago.
+Mum: Granny?
+Granny: Hmm?
+Mum: When did you meet Grandma?
+Granny: Oh, long ago. Before you were born.
+Auntie Zuri: Were you school friends?
+Granny: I'm tired, Zuri. All of your arguing has tired me out. Perhaps you should focus on Adia now.
+Uncle Kito: Did she not return?
+Granny: Perhaps she will, now you've calmed down a bit.
+Granny: Goodness me, so much drama and bickering. 'The spaceship is broken', 'Why did we take Granny'.
+Granny: This has been a most unpleasant time.
+Mum: ...
+Uncle Kito: ...
+Auntie Zuri: We're very sorry, Granny.
+Granny: Go and find Adia now. Maybe I'll tell you my story then.
+<<jump FlashbackScene3>>
+===
+title: FlashbackScene3
+position: -207,2074
+---
+I have something to say.
+-> I should wake up.
+Adia: <i> I take a stretch, and sit up on the bed. </i>
+-> I am done hiding under the duvet now. 
+    <<jump Donehiding>>
+-> I still want to hide. 
+    <<jump Wanttohide>>
+===
+title: Donehiding
+position: -450,2231
+---
+Adia: <i> I stand up and take a deep breath. I need to face reality now. </i>
+-> Go downstairs
+<<jump Downstairs>>
+===
+title: Wanttohide
+position: 42,2231
+---
+Adia: <i> I've been dreading leaving home for this trip to Grandma's cabin. But staying home as an unpaid babysitter wasn't appealing either. I'm exhausted trying to be the perfect daughter. </i>
+Adia: <i> Perhaps Mum and I wore each other out by trying to meet each other's expectations. </i>
+-> Take a deep breath
+Adia: <i> Okay, I am ready. </i>
+-> Go downstairs
+<<jump Downstairs>>
+===
+title: Downstairs
+position: -202,2412
+---
+Mum: There you are!
+
 ===
