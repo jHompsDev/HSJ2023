@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     #region VARIABLES
     public static GameManager Instance;
 
-    [SerializeField]public UIManager uiManager;
+    [SerializeField] public UIManager uiManager;
+    [SerializeField] public AudioManager audioManager;
     [SerializeField] public ConstellationManager conManager;
 
     bool debugMode;
@@ -30,10 +31,12 @@ public class GameManager : MonoBehaviour
         if (debugMode) Debug.Log("Initialise!");
 
         if (uiManager == null) uiManager = FindObjectOfType<UIManager>();
+        if (audioManager == null) audioManager = FindObjectOfType<AudioManager>();
 
         uiManager.Initialize();
 
         SwitchState(GameState.MAINMENU);
+
     }
 
     public void TrySwitchState(GameState newState)

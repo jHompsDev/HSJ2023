@@ -4929,8 +4929,8 @@ MonoBehaviour:
   bgmSource: {fileID: 1972728035}
   sfxSource: {fileID: 1898759047}
   sfxSources:
-  - key: 
-    clip: {fileID: 0}
+  - key: test
+    clip: {fileID: 8300000, guid: efe3a51290d215d4eb418da5327ffeaa, type: 3}
 --- !u!224 &1724347301 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7084386685998634907, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
