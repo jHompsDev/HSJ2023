@@ -109,11 +109,14 @@ public class UIManager : MonoBehaviour
     #region BUTTONS()
     public void StartButton()
     {
+        AudioManager.PlaySFX("uiButtPress");
         GameManager.Instance.TrySwitchState(GameState.STORY);
     }
 
     public void OptionsButton()
     {
+        AudioManager.PlaySFX("uiButtPress");
+
         ToggleMainMenu(false);
         TogglePauseUI(false);
         ToggleSettingsMenu(true);
@@ -121,6 +124,8 @@ public class UIManager : MonoBehaviour
 
     public void BackButton()
     {
+        AudioManager.PlaySFX("uiButtPress");
+
         if (GameManager.Instance.state == GameState.MAINMENU) ToggleMainMenu(true);
         else TogglePauseUI(true);
         ToggleSettingsMenu(false);
@@ -128,11 +133,15 @@ public class UIManager : MonoBehaviour
 
     public void PauseButton()
     {
+        AudioManager.PlaySFX("uiButtPress");
+
         GameManager.Instance.TrySwitchState(GameState.PAUSE);
     }
 
     public void ResumeButton()
     {
+        AudioManager.PlaySFX("uiButtPress");
+
         GameManager.Instance.TrySwitchState();
     }
 

@@ -45,6 +45,8 @@ public class ConstellationManager : MonoBehaviour
             if (!p.starB.gameObject.activeSelf) p.starB.gameObject.SetActive(true);
         }
 
+        AudioManager.PlaySFX("conStart");
+
         if (i == 0)
         {
             StartCoroutine(FadeFirstTimeText());
@@ -163,6 +165,12 @@ public class ConstellationManager : MonoBehaviour
                 {
                     currentConstellation.SetComplete();
                     spriteRenderer.enabled = true;
+
+                    AudioManager.PlaySFX("conComplete");
+                }
+                else
+                {
+                    AudioManager.PlaySFX("starPath");
                 }
 
                 selectedStar = null;

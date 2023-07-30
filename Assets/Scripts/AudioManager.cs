@@ -19,8 +19,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        sfxSource.clip = clip;
-        sfxSource.Play();
+        if (clip != null) sfxSource.PlayOneShot(clip);
     }
 
     [YarnCommand("playSFX")]
@@ -41,15 +40,21 @@ public class AudioManager : MonoBehaviour
     }
 
     [YarnCommand("playBGM")]
-    public static IEnumerator SwitchBGM(string s)
+    public static IEnumerator SwitchBGM(string s = "blank")
     {
+        Debug.Log("CALLING PLAYBGM");
         AudioManager instance = GameManager.Instance.audioManager;
 
-        AudioClip selectedAudio = instance.bgmSource.clip;
+        AudioClip selectedAudio = null;
 
-        foreach (AudioKey key in instance.sfxLibrary)
+        foreach (AudioKey key in instance.bgmLibrary)
         {
-            if (key.key == s) selectedAudio = key.clip;
+            if (key.key == s)
+            {
+                selectedAudio = key.clip;
+                Debug.Log("SELECTED KEY" + key.key);
+            }
+
         }
 
         if (instance.bgmSource.clip == selectedAudio) yield break;
@@ -57,18 +62,24 @@ public class AudioManager : MonoBehaviour
         float t = 0f;
         float i = instance.bgmSource.volume;
 
-        while (t < 1f)
+        while (t < 1)
         {
             t += Time.deltaTime;
 
-            instance.bgmSource.volume = i - (i * (1 - t));
+            instance.bgmSource.volume = i - (t * i);
+            yield return null;
         }
 
-        instance.bgmSource.Stop();
+        yield return new WaitForSeconds(0.5f);
 
-        instance.bgmSource.clip = selectedAudio;
+        instance.bgmSource.Stop();
         instance.bgmSource.volume = i;
-        instance.bgmSource.Play();
+
+        if (s != "blank")
+        {
+            instance.bgmSource.clip = selectedAudio;
+            instance.bgmSource.Play();
+        }
 
         yield break;
     }
