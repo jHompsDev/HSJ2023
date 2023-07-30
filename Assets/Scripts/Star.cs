@@ -14,8 +14,9 @@ public class Star : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        isHovered = true;
         AudioManager.PlaySFX("starHover");
+
+        isHovered = true;
         StartCoroutine(Animate());
     }
 

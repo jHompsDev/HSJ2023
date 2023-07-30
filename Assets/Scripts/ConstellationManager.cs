@@ -181,6 +181,8 @@ public class ConstellationManager : MonoBehaviour
                 if (hoveredStar != null)
                 {
                     selectedStar = hoveredStar;
+
+                    AudioManager.PlaySFX("starPress");
                     TogglePointerLine(true);
                 }
                 else
