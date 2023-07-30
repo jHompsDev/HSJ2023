@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
 
     public AudioClip testClip;
-    public List<AudioKey> sfxSources;
+    public List<AudioKey> bgmLibrary;
+    public List<AudioKey> sfxLibrary;
 
     public void PlayBGM()
     {
@@ -27,7 +28,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioManager instance = GameManager.Instance.audioManager;
 
-        foreach (AudioKey key in instance.sfxSources)
+        foreach (AudioKey key in instance.sfxLibrary)
         {
             if (key.key == s)
             {
@@ -37,5 +38,38 @@ public class AudioManager : MonoBehaviour
         }
         
         instance.PlaySFX(instance.testClip);
+    }
+
+    [YarnCommand("playBGM")]
+    public static IEnumerator SwitchBGM(string s)
+    {
+        AudioManager instance = GameManager.Instance.audioManager;
+
+        AudioClip selectedAudio = instance.bgmSource.clip;
+
+        foreach (AudioKey key in instance.sfxLibrary)
+        {
+            if (key.key == s) selectedAudio = key.clip;
+        }
+
+        if (instance.bgmSource.clip == selectedAudio) yield break;
+
+        float t = 0f;
+        float i = instance.bgmSource.volume;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+
+            instance.bgmSource.volume = i - (i * (1 - t));
+        }
+
+        instance.bgmSource.Stop();
+
+        instance.bgmSource.clip = selectedAudio;
+        instance.bgmSource.volume = i;
+        instance.bgmSource.Play();
+
+        yield break;
     }
 }
