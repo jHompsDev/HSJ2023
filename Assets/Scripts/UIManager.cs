@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image Background;
     [SerializeField] Image Foreground;
     [SerializeField] Image BGFadeOut;
+
+    [SerializeField] public TMP_Text bgmVol, sfxVol;
 
     [SerializeField] Image ActorRenderer;
 

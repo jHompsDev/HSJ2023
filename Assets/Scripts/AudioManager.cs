@@ -12,9 +12,16 @@ public class AudioManager : MonoBehaviour
     public List<AudioKey> bgmLibrary;
     public List<AudioKey> sfxLibrary;
 
-    public void PlayBGM()
+    public void AdjustBGMVol(float foo)
     {
+        bgmSource.volume = foo;
+        GameManager.Instance.uiManager.bgmVol.text = Mathf.Round(foo * 100).ToString() + "%";
+    }
 
+    public void AdjustSFXVol(float foo)
+    {
+        sfxSource.volume = foo;
+        GameManager.Instance.uiManager.sfxVol.text = Mathf.Round(foo * 100).ToString() + "%";
     }
 
     public void PlaySFX(AudioClip clip)
