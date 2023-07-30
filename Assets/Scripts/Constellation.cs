@@ -22,6 +22,9 @@ public class Constellation : MonoBehaviour
     public void SetComplete()
     {
         isComplete = true;
+
+        foreach (Star s in stars) s.gameObject.SetActive(false);
+
         StartCoroutine(GameManager.Instance.conManager.FadeConstellationIn());
         Debug.Log("COMPLETE");
     }

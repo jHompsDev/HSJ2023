@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject LineDivider;
 
     [SerializeField] Image Background;
-    [SerializeField] Image BGOverlay;
+    [SerializeField] Image Foreground;
     [SerializeField] Image BGFadeOut;
 
     [SerializeField] Image ActorRenderer;
@@ -62,6 +62,11 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance.DebugMode) Debug.Log("Pause Menu Toggled " + (toggle ? "On" : "Off"));
     }
 
+    public void ToggleForeground(bool toggle)
+    {
+        Foreground.gameObject.SetActive(toggle);
+    }
+
     [YarnCommand("actor")]
     public static void ChangeActor(string actor = "blank")
     {
@@ -100,6 +105,23 @@ public class UIManager : MonoBehaviour
         {
             t += Time.deltaTime;
             instance.BGFadeOut.color = new Color(0f, 0f, 0f, foo ? 0 + t : 1 - t);
+            yield return null;
+        }
+
+        yield break;
+    }
+
+    public static IEnumerator FadeForeground(bool foo)
+    {
+        UIManager instance = GameManager.Instance.uiManager;
+
+        float alpha = foo ? 1.0f : 0.0f;
+        float t = 0f;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            instance.Foreground.color = new Color(0f, 0f, 0f, foo ? 0 + t : 1 - t);
             yield return null;
         }
 

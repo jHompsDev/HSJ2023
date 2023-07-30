@@ -62,22 +62,26 @@ public class AudioManager : MonoBehaviour
         float t = 0f;
         float i = instance.bgmSource.volume;
 
-        while (t < 1)
+        if (instance.bgmSource.clip != null)
         {
-            t += Time.deltaTime;
+            while (t < 1)
+            {
+                t += Time.deltaTime;
 
-            instance.bgmSource.volume = i - (t * i);
-            yield return null;
+                instance.bgmSource.volume = i - (t * i);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(0.5f);
         }
-
-        yield return new WaitForSeconds(0.5f);
 
         instance.bgmSource.Stop();
         instance.bgmSource.volume = i;
+        instance.bgmSource.clip = selectedAudio;
 
         if (s != "blank")
         {
-            instance.bgmSource.clip = selectedAudio;
+            //instance.bgmSource.clip = selectedAudio;
             instance.bgmSource.Play();
         }
 

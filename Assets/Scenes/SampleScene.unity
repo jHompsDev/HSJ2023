@@ -5252,7 +5252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &998345958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10225,7 +10225,7 @@ PrefabInstance:
     - target: {fileID: 7778558436452782399, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 05af27d2817f5413ea5ba715b8378151, type: 3}
+      objectReference: {fileID: 21300000, guid: 5fcf530bee532ae4a8a28877d0f0c529, type: 3}
     - target: {fileID: 7895946088576098565, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10543,7 +10543,7 @@ MonoBehaviour:
   DialogueRunner: {fileID: 1747719298}
   LineDivider: {fileID: 1195787876}
   Background: {fileID: 1401199596}
-  BGOverlay: {fileID: 998345959}
+  Foreground: {fileID: 998345959}
   BGFadeOut: {fileID: 174371373}
   ActorRenderer: {fileID: 1437794405}
   actors:

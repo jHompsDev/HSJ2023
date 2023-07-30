@@ -178,7 +178,7 @@ public class ConstellationManager : MonoBehaviour
             }
             else
             {
-                if (hoveredStar != null)
+                if (hoveredStar != null && !currentConstellation.isComplete)
                 {
                     selectedStar = hoveredStar;
 
