@@ -1,5 +1,5 @@
 title: Start
-position: -213,-729
+position: -215,-931
 ---
 <<actor blank>>
 <<bgFade true>>
@@ -15,6 +15,7 @@ I fear I am too late.
 title: Crashlanding
 position: -213,-556
 ---
+<<playBGM experiment2>>
 <<actor Adia>>
 Adia: <i> There's so much dust... But I seem to be okay. </i>
 Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
@@ -34,15 +35,15 @@ Uncle Kito: I thought she was with you, you're always hovering around her.
 Mum: Only because no one else takes responsibility! Don't forget it was your fault we nearly left her behind!
 <<actor UncleKito>>
 Uncle Kito: I thought you agreed to take her, besides she's not even part of the family!
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Says who? 
 <<actor Mum>>
 Mum: That's it, I'm going back in to find her...
 <<actor UncleKito>>
 Uncle Kito: Oh, so you want to start now? Where were you while we were crashlanding on planet Who Knows Where?
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: I knew we shouldn't have come here, Zuri, they'll never change. We should leave.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: No, I'm not leaving now. We said we'd give this a go... It's been five years.
 <<actor UncleKito>>
 Uncle Kito: Five long years, and not a word from you since.
@@ -87,7 +88,7 @@ Adia: Mum?
 Uncle Sefu: Why did you bring her anyway? This was meant to be an adults only reunion so you could finally reconnect with each other.
 <<actor Adia>>
 Adia: Mum, can you not see me?
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: Its not the time to bring a child.
 <<actor Mum>>
 Mum: Excuse me! Who do you think you are? No one said we couldn't bring our children...
@@ -100,25 +101,25 @@ Uncle Kito: Adia will turn up. She's a teenager, she doesn't need to be so molly
 Uncle Kito: In the meantime, we should fetch some resources.
 <<actor Granny>>
 Granny: I have some tuna we can salvage.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Why did you bring tuna, Granny?
 <<actor Granny>>
 Granny: In-case we come across some space cats!
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: Hold on a moment, I've managed to locate a cache... 
 <<actor Mum>>
 Mum: That's awfully far away...
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: Its not a problem for me. I'll be back in a few hours... Just try to stay civil for Zuri, okay?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Hubby...
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: You wanted this opportunity... Let's hope everyone makes the most if it, hmm?
 <<actor UncleKito>>
 Uncle Kito: In the mean time I'll get some firewood.
 <<actor Mum>>
 Mum: I'll come with you.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: What about me? 
 <<actor UncleKito>>
 Uncle Kito: You stay with Granny.
@@ -129,6 +130,7 @@ Mum: And keep an eye out for Adia.
 title: Endofscene1
 position: -212,33
 ---
+<<bgFade true>>
 <<actor Adia>>
 Adia: <i> We have crashlanded on a foreign planet. We have low supplies, and everyone is arguing about meaningless things. </i>
 Adia: <i> And for some reason, no one can see nor hear me. </i>
@@ -139,6 +141,8 @@ Adia: <i> I follow Mum and her older brother, Uncle Kito. Maybe there will be so
 title: Scene2
 position: -212,237
 ---
+<<bgFade false>>
+<<playBGM nightForest>>
 <<actor UncleKito>>
 Uncle Kito: You can go back, I can handle it.
 <<actor Mum>>
@@ -179,6 +183,7 @@ Mum: Kito... Look at the stars.
 title: Complete1
 position: -212,425
 ---
+<<playBGM brightPiano>>
 <<actor UncleKito>>
 Uncle Kito: It looks like Grandma's cooking pot.
 <<actor Mum>>
@@ -220,6 +225,8 @@ Adia: <i> I think they would like to learn many more recipes from you. </i>
 title: Endofscene2
 position: -212,602
 ---
+<<bgFade true>>
+<<playBGM nightForest>>
 <<actor Adia>>
 Adia: <i> I watch Uncle Kito and Mum gather some firewood together. Even though we're on a bizarre planet, they adapt well. </i>
 Adia: <i> I decide there's nothing I can do here, and head back towards the crash site. Maybe Auntie Zuri will notice me. </i>
@@ -228,6 +235,7 @@ Adia: <i> I decide there's nothing I can do here, and head back towards the cras
 title: FlashbackScene1
 position: -210,784
 ---
+<<playBGM>>
 <<actor Mum>>
 Mum: There she is.
 <<actor UncleKito>>
@@ -244,36 +252,38 @@ Mum: Sleep well, beloved.
 title: Scene3
 position: -209,972
 ---
-<<actor AuntieZuri>>
+<<bgFade false>>
+<<playBGM fireCrackling>>
+<<actor AuntZuri>>
 Auntie Zuri: How long does it take to gather firewood?
 <<actor Granny>>
 Granny: These things take as long as they take.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: They are probably talking about me again, aren't they?
 <<actor Granny>>
 Granny: They might be. But will you stop your pacing, you are making me dizzy.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I can't stop, it helps keep me calm.
 <<actor Granny>>
 Granny: Why aren't you so worried? If you keep at it, we'll never see any spacecats.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Granny, we've crashlanded on an unknown planet, there are no spacecats. Sefu has left for a cache who knows where...
 <<actor Granny>>
 Granny: But why not make the most of it? Make this part of our holiday.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: This was never a holiday!
 <<actor Granny>>
 Granny: Then why did you bring me all this way from my home?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I don't know why we brought you. But the purpose of all this was to reconcil.
 <<actor Granny>>
 Granny: You're siblings, you don't need to reconcil.
 Adia: <i> I watch Auntie Zuri freeze, and for a moment I wonder if she can see me. She looks pitiful and in pain, until she takes a deep sigh and gazes out into the starry night sky. </i>
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I made a mistake, and Kito and Kamili have never forgiven me.
 <<actor Granny>>
 Granny: The mistake being, you not turning up to your mother's funeral, yes?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Yes, that's right.
 Adia: <i> Granny stiffly walks through me and stands besides Auntie Zuri. </i>
 <<actor Granny>>
@@ -284,76 +294,79 @@ Granny: The stars are beautiful today.
 title: Complete2
 position: -208,1154
 ---
-<<actor AuntieZuri>>
+<<playBGM slowPiano>>
+<<actor AuntZuri>>
 Auntie Zuri: Do you remember Grandma's singing?
 <<actor Granny>>
 Granny: Yes.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I loved it. She sang with her heart.
 <<actor Granny>>
 Granny: That's one way of putting it.
 <<actor Adia>>
 Adia: <i> I find myself laughing. Grandma's singing was awful. For a moment, I forget about the destruction behind me. </i>
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I loved her confidence, I loved how she didn't care too much for perfection like Kamili, or professionalism like Kito.
 Auntie Zuri: In that way, she was much more like a free spirit.
 <<actor Granny>>
 Granny: Zuri, why did you not attend her funeral?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: It wasn't an easy decision. But I thought it was what she would have wanted. You see... I had an audition for a big record label. It had to be for that day. It was finally my opportunity to shine.
 <<actor Granny>>
 Granny: How did it go?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Perfectly. I sang every note and put my whole heart into it, and the producer loved me. He signed me that day.
 <<actor Granny>>
 Granny: Your Grandma would have been very proud.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: No, she wouldn't. Because, the next day, the producer told me I would need a deposit, I emptied out my savings and...
 <<actor Granny>>
 Granny: Oh dear.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: He left for another planet, and so did my dreams. I have never sung again since.
 <<actor Granny>>
 Granny: Why didn't you tell your siblings?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I was ashamed. And when I didn't hear anything from them since the funeral... Well, I knew they must hate me. The next few years was very hard, but then I met Sefu.
 Auntie Zuri: I didn't expect to connect with someone from our home planet, nor did I expect to find someone who wanted to help me. But he supported me, and helped me gain independence too.
 Auntie Zuri: I feel guilty that I needed to rely on him for sometime, but he has never showed me anything but kindness and love.
 <<actor Granny>>
 Granny: To find love like that is precious, dear. Hold onto it tight.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Did you ever find love, Granny?
 <<actor Granny>>
 Granny: Yes I did. And I clung onto it more than anything else. And I have no regrets either.
 Granny: Come now, we may not be able to fix this ship entirely, but there must be a way to make ourselves more comfortable.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Most of the smoke seems to have cleared now, I will see if I can salvage some things from the ship.
 <<actor Granny>>
 Granny: Tread lightly, dear.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Of course, Granny.
 <<jump FlashbackScene2>>
 ===
 title: FlashbackScene2
 position: -208,1333
 ---
-<<actor AuntieZuri>>
+<<bgFade true>>
+<<playBGM>>
+<<actor AuntZuri>>
 Auntie Zuri: I've found Adia another pillow to make her more comfortable.
 <<actor Mum>>
 Mum: Thanks.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Is she still asleep?
 <<actor Mum>>
 Mum: I don't know when she'll wake up.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: She looks so peaceful...
 <<actor Mum>>
 Mum: While stress are etched in our faces.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I think they're called wrinkles.
 <<actor Mum>>
 Mum: Hey, are you calling me old?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Come on, let's go back downstairs. Zito has heated up the tuna.
 <<actor Mum>>
 Mum: I pray that your husband returns to us soon. I cannot survive on cans of tuna!
@@ -362,6 +375,7 @@ Mum: I pray that your husband returns to us soon. I cannot survive on cans of tu
 title: Scene4
 position: -209,1514
 ---
+<<playBGM experiment2>>
 Warning, distress signal not received.
 Ship power down to 20%.
 <<jump Scene4Part1>>
@@ -369,35 +383,38 @@ Ship power down to 20%.
 title: Scene4Part1
 position: -208,1697
 ---
-<<actor AuntieZuri>>
+<<bgFade false>>
+<<playBGM fireCrackling>>
+<<actor AuntZuri>>
 Auntie Zuri: Brr, its getting cold. Do you need another blanket, Granny?
 <<actor Granny>>
 Granny: ...
 <<actor Mum>>
 Mum: We're back.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Ah, will this last us the night?
 <<actor Mum>>
 Mum: We won't last at all if Sefu doesn't come back.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: He's going as fast as he can.
 <<actor UncleKito>>
 Uncle Kito: Is he? How do we even know if he found a cache, perhaps he intends to abandon us.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Can you blame him? All we're doing is arguing.
 <<actor Mum>>
 Mum: And why is that, do you think?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Just spit it out! You don't want me here!
 <<actor Mum>>
 Mum: That's not-
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I don't understand why you invited me on this trip in the first place.
 <<actor UncleKito>>
 Uncle Kito: Why did we bother? 
+<<playBGM>>
 <<actor Mum>>
 Mum: Grandma's will.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: What?
 <<actor Mum>>
 Mum: You never found out, did you, Zuri? In her remaining years, Grandma spent nearly all of her savings.
@@ -405,7 +422,7 @@ Mum: You never found out, did you, Zuri? In her remaining years, Grandma spent n
 Uncle Kito: She left us this humble spaceship, between the three of us.
 <<actor Mum>>
 Mum: And it has taken us five years to finally meet and decide what to do with it.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: And now its broken...
 <<actor UncleKito>>
 Uncle Kito: Beyond repair.
@@ -423,7 +440,7 @@ Mum: Only, every time, I had to cancel because...
 Uncle Kito: I was working on the Poseidon Starbase.
 <<actor Mum>>
 Mum: I thought Granny would want us to gather together. I've worked so hard. It has been a constant struggle to keep afloat with my four girls.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: I'm sorry to hear of Harry's passing, I sent you a message.
 <<actor Mum>>
 Mum: After all that time Zuri, I didn't know how to respond to you. He was incredible when Granny died.
@@ -431,12 +448,13 @@ Mum: When he passed, all I've done is try to be the perfect mother to my childre
 Mum: Is it too much to have wanted to at least pretend everything was fine between us? Just for one day?
 Mum: I feel like... I feel like I have been punished. I have nothing but my children... I'm struggling.
 <<actor Adia>>
+<<playBGM brightPiano>>
 Adia: <i> Mum... Look to the stars. </i>
 <<actor Mum>>
 Mum: Just... One... Day...
 <<actor UncleKito>>
 Uncle Kito: Kamili...
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Sister...
 <<actor Adia>>
 Adia: <i> Mum... </i>
@@ -445,9 +463,9 @@ Adia: <i> Please, take a moment. </i>
 Mum: Adia...
 <<actor UncleKito>>
 Uncle Kito: Take a deep breath.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Everything is going to be fine.
-<<actor>>
+<<actor blank>>
 Adia: <i> Finally, my Mum leans her head towards the sky, and she too sees her spirit reflected back on her. </i>
 <<constellation 4>>
 <<jump Complete3>>
@@ -455,11 +473,11 @@ Adia: <i> Finally, my Mum leans her head towards the sky, and she too sees her s
 title: Complete3
 position: -208,1884
 ---
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Its a proud and beautiful swan.
 <<actor UncleKito>>
 Uncle Kito: Do you remember when we all moved to the new planet?
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Yes, you thought the swans were tame.
 <<actor Mum>>
 Mum: I think Grandma couldn't stop laughing. She did tell you to stand back.
@@ -471,9 +489,10 @@ Mum: Granny?
 Granny: Hmm?
 <<actor Mum>>
 Mum: When did you meet Grandma?
+<<playBGM>>
 <<actor Granny>>
 Granny: Oh, long ago. Before you were born.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Were you school friends?
 <<actor Granny>>
 Granny: I'm tired, Zuri. All of your arguing has tired me out. Perhaps you should focus on Adia now.
@@ -487,7 +506,7 @@ Granny: This has been a most unpleasant time.
 Mum: ...
 <<actor UncleKito>>
 Uncle Kito: ...
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: We're very sorry, Granny.
 <<actor Granny>>
 Granny: Go and find Adia now. Maybe I'll tell you my story then.
@@ -496,7 +515,9 @@ Granny: Go and find Adia now. Maybe I'll tell you my story then.
 title: FlashbackScene3
 position: -207,2074
 ---
-<<actor>>
+<<bgFade true>>
+<<playBGM experiment2>>
+<<actor blank>>
 I have something to say.
 -> I should wake up.
 <<actor Adia>>
@@ -526,21 +547,24 @@ Adia: <i> Okay, I am ready. </i>
 title: Downstairs
 position: -202,2412
 ---
+<<bgFade false>>
+<<playBGM fireCrackling>>
 <<actor Mum>>
 Mum: There you are!
 <<actor Adia>>
 Adia: Mum...
 <<actor UncleKito>>
 Uncle Kito: Welcome back to the world of the awake, Adia.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Its good to see you.
 <<actor Granny>>
 Granny: No need to hide anymore. They've mostly sorted out their problems.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: We were asking Granny about how she came to know Grandma.
 <<actor Granny>>
 Granny: Make yourselves comfortable then.
 Adia: <i> I watch Granny sigh, as she looks briefly at the window, before closing her eyes, and beginning her tale. </i>
+<<playBGM inspiring>>
 Granny: I met Grandma across the road. We attended different schools, as was very common back then with our backgrounds.
 Granny: We caught each other's eyes, I think we both realised we had a spark of mischief.
 Granny: It began with me throwing a tomoko across the road.
@@ -548,7 +572,7 @@ Granny: She caught it, and shared a tende by splitting it with her teeth.
 Granny: I think its fair to say, she had the better deal at the time.
 Granny: Our fruit exchanges then became screwed up paper, or more elegant paper birds if we were up for it.
 Granny: Eventually, we became good friends. And then, we fell in love.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: You and Grandma dated?
 <<actor Granny>>
 Granny: Yes, as much as we could. It was very dangerous, but we were young and star-crossed lovers.
@@ -564,7 +588,7 @@ Uncle Kito: At first, we thought you were taking advantage.
 <<actor Granny>>
 Granny: Your mother held all her senses to the very end.
 Granny: No, she wanted to take control of her life. And I was in the very fortunate position, that she wanted me involved in that period of time.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: She spent her savings well. Isn't that what money is for? Living.
 <<actor Mum>>
 Mum: ...
@@ -581,8 +605,9 @@ Adia: No, not really.
 Granny: Now everyone but you Adia, has confessed their heart.
 <<actor UncleKito>>
 Uncle Zito: Don't pressure her.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: We've put Adia through enough. I'm... Sorry for all the arguments you overheard.
+<<playBGM>>
 <<actor Adia>>
 Adia: It's fine. It's...
 -> I do have something to say.
@@ -605,8 +630,9 @@ Adia: But... I really want this. I want this freedom now while I am young.
 <<actor Mum>>
 Mum: ...
 Mum: Adia...
+<<playBGM wedding>> 
 Mum: That sounds like a wonderful opportunity, you should take full advantage of it!
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Just how Grandma would, if she could have...
 <<actor UncleKito>>
 Uncle Zito: Adia...
@@ -614,29 +640,29 @@ Uncle Zito: You'll have to send us photos.
 <<actor Granny>>
 Granny: I'll give you maps and names of the places your Grandma and I visited, we have lots of recommendations. And where not to go to. 
 Granny: Don't trust the Silverfish Cafe in Colorado, absolutely awful. Bluergh!
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Granny!
 <<actor Mum>>
 Mum: Have you been waiting all this time to say?
 <<actor Adia>>
 Adia: <i> I can only nod as tears gush past my eyes, and I embrace my family together. </i>
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: Sefu!
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: I have returned and come baring gifts! It turns out the local village has a chip shop. We're going to make it after all.
 <<actor UncleKito>>
 Uncle Zito: Oh thank goodness, well done, Sefu.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: My husband saved us!
 <<actor Granny>>
 Granny: Not more fish.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: You're the one that brought tuna.
 <<actor Granny>>
 Granny: For the cats, dear.
-<<actor UncleSefu>>
+<<actor Sefu>>
 Uncle Sefu: And I've some drinks too. Now we're all finally in a good mood ey? Let's make a cheers.
-<<actor AuntieZuri>>
+<<actor AuntZuri>>
 Auntie Zuri: To Grandma.
 <<actor UncleKito>>
 Uncle Zito: To family.
