@@ -11099,6 +11099,10 @@ PrefabInstance:
       propertyPath: yarnProject
       value: 
       objectReference: {fileID: 7545569452688597077, guid: 9fe15c0651cbced4980fca7057462679, type: 3}
+    - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: startAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3739197626111815070, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: m_Camera
       value: 
@@ -11722,7 +11726,8 @@ MonoBehaviour:
   DialogueRunner: {fileID: 1747719298}
   LineDivider: {fileID: 1195787876}
   Background: {fileID: 1401199596}
-  Foreground: {fileID: 998345959}
+  BackgroundArt: {fileID: 1401199596}
+  ForegroundArt: {fileID: 998345959}
   BGFadeOut: {fileID: 174371373}
   bgmVol: {fileID: 1589926244}
   sfxVol: {fileID: 1821107545}
@@ -11749,6 +11754,10 @@ MonoBehaviour:
   - name: Granny
     sprite: {fileID: 21300000, guid: 005c4f05d51f9fd45bdeb053021ecff5, type: 3}
     sound: {fileID: 8300000, guid: d5ebc94b9647800408f90423ee4cde39, type: 3}
+  bg1: {fileID: 21300000, guid: 4bbbc5edf6329b44abf06a3e137fe39b, type: 3}
+  bg2: {fileID: 21300000, guid: ae31a9352c2adf944aa77eb159eb86cf, type: 3}
+  fg1: {fileID: 21300000, guid: 6bd74a55206e9cd4e82346f3fcbf17b7, type: 3}
+  fg2: {fileID: 21300000, guid: 6d55ba8500c0db0438eac3f7137120c9, type: 3}
 --- !u!114 &1719473753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11787,7 +11796,7 @@ MonoBehaviour:
   - key: uiButtPress
     clip: {fileID: 8300000, guid: 47832847b5c4069458e4bc7245edb60c, type: 3}
   - key: starHover
-    clip: {fileID: 8300000, guid: fe7210806b77c9340a02e4edbd3b7677, type: 3}
+    clip: {fileID: 0}
   - key: starPress
     clip: {fileID: 0}
   - key: starPath

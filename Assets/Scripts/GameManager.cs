@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
                 else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
                 break;
             case GameState.STORY:
-                if (newState == GameState.PAUSE || newState == GameState.STARS) SwitchState(newState);
+                if (newState == GameState.PAUSE || newState == GameState.STARS || newState == GameState.MAINMENU) SwitchState(newState);
                 else if (debugMode) Debug.LogWarning("Game State can't be toggled from " + state + " to " + newState);
                 break;
             case GameState.PAUSE:
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         lastState = state;
         state = newState;
-        if (debugMode) Debug.Log("Case Switched to " + newState);
+        if (debugMode) Debug.Log("State Switched to " + newState);
     }
 
     public void ToggleDebug(bool var)
@@ -143,12 +143,24 @@ public class GameManager : MonoBehaviour
         yield break;
     }
 
+    [YarnCommand("resetDialogue")]
+    public static void ResetDialogue()
+    {
+        Instance.StartCoroutine(Instance.EndDialogue());
+    }
+
+    IEnumerator EndDialogue()
+    {
+        yield return new WaitForSeconds(1);
+        TrySwitchState(GameState.MAINMENU);
+    }
+
     #endregion
 
     #region MONOBEHAVIOUR
     private void Awake()
     {
-        ToggleDebug(true);
+        //ToggleDebug(true);
 
         Initialise();
     }

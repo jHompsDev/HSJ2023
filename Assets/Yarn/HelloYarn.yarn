@@ -7,6 +7,7 @@ position: -215,-931
 I have something to say.
 But now is not the time.
 I fear I am too late.
+<<bgToggle false>>
 <<bgFade false>>
 <<playBGM inspiring>>
 <<constellation 1>>
@@ -15,8 +16,8 @@ I fear I am too late.
 title: Crashlanding
 position: -213,-556
 ---
-<<actor Adia>>
 <<playBGM experiment2>>
+<<actor Adia>>
 Adia: <i> There's so much dust... But I seem to be okay. </i>
 Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
 -> Leave the starship 
@@ -27,6 +28,7 @@ Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
 title: Leavestarship
 position: -464,-334
 ---
+<<fgFade true>>
 <<actor Mum>>
 Mum: Where is Granny?
 <<actor UncleKito>>
@@ -141,8 +143,8 @@ Adia: <i> I follow Mum and her older brother, Uncle Kito. Maybe there will be so
 title: Scene2
 position: -212,237
 ---
-<<bgFade false>>
 <<playBGM nightForest>>
+<<bgFade false>>
 <<actor UncleKito>>
 Uncle Kito: You can go back, I can handle it.
 <<actor Mum>>
@@ -178,12 +180,14 @@ Uncle Kito: Maybe it was too much.
 <<actor Mum>>
 Mum: Kito... Look at the stars.
 <<actor blank>>
+<<fgFade false>>
 <<constellation 2>>
 << jump Complete1 >>
 ===
 title: Complete1
 position: -212,425
 ---
+<<fgFade true>>
 <<playBGM brightPiano>>
 <<actor UncleKito>>
 Uncle Kito: It looks like Grandma's cooking pot.
@@ -216,7 +220,7 @@ Mum: I thought you were doing well.
 <<actor UncleKito>>
 Uncle Kito: We are. All of our hardwork... It is going straight to our children. But I fear our children will grow to resent us.
 Uncle Kito: I think it is good that you brought Adia with you. It is important children have time to spend with their parents.
-Uncle Kito: I wish I could make different choices. But the bond with my children has already grown distant, and I fell so compelled to take control over the one thing I can.
+Uncle Kito: I wish I could make different choices. But the bond with my children has already grown distant, and I feel so compelled to take control over the one thing I can.
 Uncle Kito: At least, I am good at working, even if I cannot say the right things to comfort them. I can give them a bright future that they deserve.
 <<actor Adia>>
 Adia: <i> Uncle Kito... When I am with your children, they always tell me about the times that you cook for them. </i>
@@ -228,7 +232,6 @@ position: -212,602
 ---
 <<bgFade true>>
 <<playBGM nightForest>>
-<<actor Adia>>
 Adia: <i> I watch Uncle Kito and Mum gather some firewood together. Even though we're on a bizarre planet, they adapt well. </i>
 Adia: <i> I decide there's nothing I can do here, and head back towards the crash site. Maybe Auntie Zuri will notice me. </i>
 << jump FlashbackScene1 >>
@@ -248,6 +251,7 @@ Uncle Kito: Its to be expected, considering everything.
 Uncle Kito: Don't worry, Kamili, Adia will come back to us soon.
 <<actor Mum>>
 Mum: Sleep well, beloved.
+<<actor blank>>
 << jump Scene3 >>
 ===
 title: Scene3
@@ -266,7 +270,7 @@ Granny: They might be. But will you stop your pacing, you are making me dizzy.
 <<actor AuntieZuri>>
 Auntie Zuri: I can't stop, it helps keep me calm.
 <<actor Granny>>
-Granny: Why aren't you so worried? If you keep at it, we'll never see any spacecats.
+Granny: Why are you so worried? If you keep at it, we'll never see any spacecats.
 <<actor AuntieZuri>>
 Auntie Zuri: Granny, we've crashlanded on an unknown planet, there are no spacecats. Sefu has left for a cache who knows where...
 <<actor Granny>>
@@ -276,26 +280,28 @@ Auntie Zuri: This was never a holiday!
 <<actor Granny>>
 Granny: Then why did you bring me all this way from my home?
 <<actor AuntieZuri>>
-Auntie Zuri: I don't know why we brought you. But the purpose of all this was to reconcil.
+Auntie Zuri: I don't know why we brought you. But the purpose of all this was to reconcile.
 <<actor Granny>>
-Granny: You're siblings, you don't need to reconcil.
+Granny: You're siblings, you don't need to reconcile.
 Adia: <i> I watch Auntie Zuri freeze, and for a moment I wonder if she can see me. She looks pitiful and in pain, until she takes a deep sigh and gazes out into the starry night sky. </i>
 <<actor AuntieZuri>>
 Auntie Zuri: I made a mistake, and Kito and Kamili have never forgiven me.
 <<actor Granny>>
-Granny: The mistake being, you not turning up to your mother's funeral, yes?
+Granny: The mistake being, you failed to turn up to your mother's funeral, yes?
 <<actor AuntieZuri>>
 Auntie Zuri: Yes, that's right.
 Adia: <i> Granny stiffly walks through me and stands besides Auntie Zuri. </i>
 <<actor Granny>>
 Granny: The stars are beautiful today.
 <<actor blank>>
+<<fgFade false>>
 <<constellation 3>>
 << jump Complete2 >>
 ===
 title: Complete2
 position: -208,1154
 ---
+<<fgFade true>>
 <<playBGM slowPiano>>
 <<actor AuntieZuri>>
 Auntie Zuri: Do you remember Grandma's singing?
@@ -329,9 +335,9 @@ Auntie Zuri: He left for another planet, and so did my dreams. I have never sung
 <<actor Granny>>
 Granny: Why didn't you tell your siblings?
 <<actor AuntieZuri>>
-Auntie Zuri: I was ashamed. And when I didn't hear anything from them since the funeral... Well, I knew they must hate me. The next few years was very hard, but then I met Sefu.
+Auntie Zuri: I was ashamed. And when I didn't hear anything from them since the funeral... Well, I knew they must hate me. The next few years were very hard, but then I met Sefu.
 Auntie Zuri: I didn't expect to connect with someone from our home planet, nor did I expect to find someone who wanted to help me. But he supported me, and helped me gain independence too.
-Auntie Zuri: I feel guilty that I needed to rely on him for sometime, but he has never showed me anything but kindness and love.
+Auntie Zuri: I feel guilty that I needed to rely on him for some time, but he has never showed me anything but kindness and love.
 <<actor Granny>>
 Granny: To find love like that is precious, dear. Hold onto it tight.
 <<actor AuntieZuri>>
@@ -363,7 +369,7 @@ Mum: I don't know when she'll wake up.
 <<actor AuntieZuri>>
 Auntie Zuri: She looks so peaceful...
 <<actor Mum>>
-Mum: While stress are etched in our faces.
+Mum: While stress is etched in our faces.
 <<actor AuntieZuri>>
 Auntie Zuri: I think they're called wrinkles.
 <<actor Mum>>
@@ -470,12 +476,14 @@ Uncle Kito: Take a deep breath.
 Auntie Zuri: Everything is going to be fine.
 <<actor blank>>
 Adia: <i> Finally, my Mum leans her head towards the sky, and she too sees her spirit reflected back on her. </i>
+<<fgFade false>>
 <<constellation 4>>
 <<jump Complete3>>
 ===
 title: Complete3
 position: -208,1884
 ---
+<<fgFade true>>
 <<actor AuntieZuri>>
 Auntie Zuri: Its a proud and beautiful swan.
 <<actor UncleKito>>
@@ -521,6 +529,7 @@ position: -207,2074
 <<bgFade true>>
 <<playBGM experiment2>>
 <<actor blank>>
+<<bgToggle true>>
 I have something to say.
 -> I should wake up.
 <<actor Adia>>
@@ -550,6 +559,7 @@ Adia: <i> Okay, I am ready. </i>
 title: Downstairs
 position: -202,2412
 ---
+<<fgFade true>>
 <<bgFade false>>
 <<playBGM fireCrackling>>
 <<actor Mum>>
@@ -675,4 +685,7 @@ Mum: To freedom.
 Granny: To love.
 <<actor Adia>>
 Adia: To happiness.
+<<actor blank>>
+<<fgFade false>>
+<<resetDialogue>>
 ===

@@ -20,7 +20,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject LineDivider;
 
     [SerializeField] Image Background;
-    [SerializeField] Image Foreground;
+    [SerializeField] Image BackgroundArt;
+    [SerializeField] Image ForegroundArt;
     [SerializeField] Image BGFadeOut;
 
     [SerializeField] public TMP_Text bgmVol, sfxVol;
@@ -30,9 +31,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] List<Actor> actors;
     Actor currentActor;
 
+    [SerializeField] Sprite bg1, bg2, fg1, fg2;
+
     public void Initialize()
     {
-        Debug.Log("UI Initialized");
+        //Debug.Log("UI Initialized");
 
         if (MainMenuObject == null) GameObject.Find("Main Menu");
         if (GameManager.Instance.DebugMode) Debug.Log("Main Menu found under " + MainMenuObject.name);
@@ -74,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleForeground(bool toggle)
     {
-        Foreground.gameObject.SetActive(toggle);
+        ForegroundArt.gameObject.SetActive(toggle);
     }
 
     [YarnCommand("actor")]
@@ -153,15 +156,15 @@ public class UIManager : MonoBehaviour
         UIManager ui = GameManager.Instance.uiManager;
         float t = 0f;
 
-        if (!ui.Foreground.gameObject.activeSelf) ui.Foreground.gameObject.SetActive(true);
+        if (!ui.ForegroundArt.gameObject.activeSelf) ui.ForegroundArt.gameObject.SetActive(true);
 
-        ui.Foreground.color = new Color(1f, 1f, 1f, foo ? 0 : 1);
+        ui.ForegroundArt.color = new Color(1f, 1f, 1f, foo ? 0 : 1);
 
         while (t < 1)
         {
             t += Time.deltaTime;
-            if (foo) ui.Foreground.color = new Color(1f, 1f, 1f, t);
-            else ui.Foreground.color = new Color(1f, 1f, 1f, 1f - t);
+            if (foo) ui.ForegroundArt.color = new Color(1f, 1f, 1f, t);
+            else ui.ForegroundArt.color = new Color(1f, 1f, 1f, 1f - t);
 
             yield return null;
         }
@@ -176,7 +179,7 @@ public class UIManager : MonoBehaviour
 
     public void PlayActorBlip()
     {
-        Debug.Log("Blip");
+        //Debug.Log("Blip");
         if (currentActor.name != "blank") GameManager.Instance.audioManager.PlaySFX(currentActor.sound);
     }
 
@@ -208,17 +211,27 @@ public class UIManager : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime;
-            instance.Foreground.color = new Color(0f, 0f, 0f, foo ? 0 + t : 1 - t);
+            instance.ForegroundArt.color = new Color(0f, 0f, 0f, foo ? 0 + t : 1 - t);
             yield return null;
         }
 
         yield break;
     }
 
+    [YarnCommand("bgToggle")]
+    public static void ToggleBG(bool foo)
+    {
+        UIManager ui = GameManager.Instance.uiManager;
+
+        ui.BackgroundArt.sprite = foo ? ui.bg2 : ui.bg1;
+        ui.ForegroundArt.sprite = foo ? ui.fg2 : ui.fg1;
+    }
+
     #region BUTTONS()
     public void StartButton()
     {
         AudioManager.PlaySFX("uiButtPress");
+        FindObjectOfType<DialogueRunner>().StartDialogue("Start");
         GameManager.Instance.TrySwitchState(GameState.STORY);
     }
 

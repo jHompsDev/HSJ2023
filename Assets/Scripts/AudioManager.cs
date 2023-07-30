@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     [YarnCommand("playBGM")]
     public static IEnumerator SwitchBGM(string s = "blank")
     {
-        Debug.Log("CALLING PLAYBGM");
+        //Debug.Log("CALLING PLAYBGM");
         AudioManager instance = GameManager.Instance.audioManager;
 
         AudioClip selectedAudio = null;
@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
             if (key.key == s)
             {
                 selectedAudio = key.clip;
-                Debug.Log("SELECTED KEY" + key.key);
+                //Debug.Log("SELECTED KEY" + key.key);
             }
 
         }
