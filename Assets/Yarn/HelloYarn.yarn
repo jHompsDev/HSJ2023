@@ -2,9 +2,11 @@ title: Start
 position: -213,-729
 ---
 <<actor blank>>
+<<bgFade true>>
 I have something to say.
 But now is not the time.
 I fear I am too late.
+<<bgFade false>>
 <<constellation 1>>
 << jump Crashlanding >> 
 ===

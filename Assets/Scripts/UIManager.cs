@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Image Background;
     [SerializeField] Image BGOverlay;
+    [SerializeField] Image BGFadeOut;
 
     [SerializeField] Image ActorRenderer;
 
@@ -85,6 +86,24 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Blip");
         if (currentActor.name != "blank") GameManager.Instance.audioManager.PlaySFX(currentActor.sound);
+    }
+
+    [YarnCommand("bgFade")]
+    public static IEnumerator FadeBackground(bool foo)
+    {
+        UIManager instance = GameManager.Instance.uiManager;
+
+        float alpha = foo ? 1.0f : 0.0f;
+        float t = 0f;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            instance.BGFadeOut.color = new Color(0f, 0f, 0f, foo ? 0 + t : 1 - t);
+            yield return null;
+        }
+
+        yield break;
     }
 
     #region BUTTONS()
