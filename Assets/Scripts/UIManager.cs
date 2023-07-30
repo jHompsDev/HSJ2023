@@ -142,6 +142,33 @@ public class UIManager : MonoBehaviour
     //    ui.ActorRenderer.sprite = ui.currentActor.sprite;
     //}
 
+    [YarnCommand("fgFade")]
+    public static void FadeOverlay(bool foo)
+    {
+        GameManager.Instance.uiManager.StartCoroutine(FadeOverlayCoroutine(foo));
+    }
+
+    public static IEnumerator FadeOverlayCoroutine(bool foo)
+    {
+        UIManager ui = GameManager.Instance.uiManager;
+        float t = 0f;
+
+        if (!ui.Foreground.gameObject.activeSelf) ui.Foreground.gameObject.SetActive(true);
+
+        ui.Foreground.color = new Color(1f, 1f, 1f, foo ? 0 : 1);
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            if (foo) ui.Foreground.color = new Color(1f, 1f, 1f, t);
+            else ui.Foreground.color = new Color(1f, 1f, 1f, 1f - t);
+
+            yield return null;
+        }
+
+        yield break;
+    }
+
     public void ToggleLineDivider(bool foo)
     {
         LineDivider.SetActive(foo);
