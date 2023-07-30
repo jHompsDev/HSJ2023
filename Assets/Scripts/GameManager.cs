@@ -78,24 +78,28 @@ public class GameManager : MonoBehaviour
                 uiManager.ToggleMainMenu(true);
                 uiManager.ToggleDialogueUI(false);
                 uiManager.TogglePauseUI(false);
+                conManager.ToggleConstellationUI(false);
                 conManager.gameObject.SetActive(false);
                 break;
             case GameState.STORY:
                 uiManager.ToggleMainMenu(false);
                 uiManager.ToggleDialogueUI(true);
                 uiManager.TogglePauseUI(false);
+                conManager.ToggleConstellationUI(false);
                 conManager.gameObject.SetActive(false);
                 break;
             case GameState.PAUSE:
                 uiManager.ToggleMainMenu(false);
                 uiManager.ToggleDialogueUI(false);
                 uiManager.TogglePauseUI(true);
+                conManager.ToggleConstellationUI(false);
                 conManager.gameObject.SetActive(false);
                 break;
             case GameState.STARS:
                 uiManager.ToggleMainMenu(false);
                 uiManager.ToggleDialogueUI(false);
                 uiManager.TogglePauseUI(false);
+                conManager.ToggleConstellationUI(true);
                 conManager.gameObject.SetActive(true);
                 break;
             default: break;

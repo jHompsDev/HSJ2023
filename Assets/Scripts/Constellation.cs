@@ -26,6 +26,6 @@ public class Constellation : MonoBehaviour
         foreach (Star s in stars) s.gameObject.SetActive(false);
 
         StartCoroutine(GameManager.Instance.conManager.FadeConstellationIn());
-        Debug.Log("COMPLETE");
+        //Debug.Log("COMPLETE");
     }
 }

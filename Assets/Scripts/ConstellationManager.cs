@@ -21,6 +21,7 @@ public class ConstellationManager : MonoBehaviour
     [SerializeField] LineRenderer pointerPathRenderer;
 
     [SerializeField] public TMP_Text firstText;
+    [SerializeField] public TMP_Text starCountText;
 
     public void Initialise(int i = 0)
     {
@@ -30,6 +31,7 @@ public class ConstellationManager : MonoBehaviour
         spriteRenderer.enabled = false;
 
         currentConstellation.gameObject.SetActive(true);
+
         foreach (Constellation c in constellations)
         {
             if (c != currentConstellation) c.gameObject.SetActive(false);
@@ -45,12 +47,24 @@ public class ConstellationManager : MonoBehaviour
             if (!p.starB.gameObject.activeSelf) p.starB.gameObject.SetActive(true);
         }
 
+        starCountText.text = "Star Paths: 0/" + currentConstellation.starPaths.Count;
+
         AudioManager.PlaySFX("conStart");
 
-        if (i == 0)
+        string fadeText = "";
+
+        switch (i)
         {
-            StartCoroutine(FadeFirstTimeText());
+            case 0: fadeText = "Click the Stars and make lines<br>between them to form a constellation!";break;
+            case 1: fadeText = "Love can slumber in a boiling pot.<br>Meals shared with family is never forgot."; break;
+            case 2: fadeText = "Loving is not perfect, nor always in tune.<br>Notes sung with the heart can make one swoon."; break;
+            case 3: fadeText = "Fiercly defend those under your care,<br>Wings outstretched, and a long neck in the air."; break;
+            default: break;
         }
+
+        firstText.text = fadeText;
+
+        StartCoroutine(FadeFirstTimeText());
     }
 
     void UpdatePointerPos()
@@ -84,6 +98,23 @@ public class ConstellationManager : MonoBehaviour
 
         path = null;
         return false;
+    }
+
+    void UpdateUI()
+    {
+        uint i = 0;
+
+        foreach (StarPath p in currentConstellation.starPaths)
+        {
+            if (p.isEnabled) i++;
+        }
+
+        starCountText.text = "Star Paths: " + i + "/" + currentConstellation.starPaths.Count;
+    }
+
+    public void ToggleConstellationUI(bool foo)
+    {
+        firstText.gameObject.SetActive(foo);
     }
 
     public IEnumerator FadeConstellationIn()
@@ -125,8 +156,8 @@ public class ConstellationManager : MonoBehaviour
             }
         }
 
-        firstText.gameObject.SetActive(false);
-        firstText.color = new Color(1, 1, 1, 1);
+        //firstText.gameObject.SetActive(false);
+        //firstText.color = new Color(1, 1, 1, 1);
 
         yield break;
     }
@@ -139,6 +170,8 @@ public class ConstellationManager : MonoBehaviour
     private void Update()
     {
         UpdatePointerPos();
+
+
 
         foreach (Star star in stars)
         {
@@ -160,6 +193,7 @@ public class ConstellationManager : MonoBehaviour
             if (AreStarsClickedPath(out p))
             {
                 p.SetEnabled();
+                UpdateUI();
 
                 if (currentConstellation.CheckIfComplete())
                 {
@@ -180,7 +214,7 @@ public class ConstellationManager : MonoBehaviour
             {
                 if (hoveredStar != null && !currentConstellation.isComplete)
                 {
-                    if (selectedStar== null)
+                    if (selectedStar == null)
                     {
                         selectedStar = hoveredStar;
                         AudioManager.PlaySFX("starPress");
