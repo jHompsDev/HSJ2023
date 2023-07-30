@@ -180,9 +180,12 @@ public class ConstellationManager : MonoBehaviour
             {
                 if (hoveredStar != null && !currentConstellation.isComplete)
                 {
-                    selectedStar = hoveredStar;
+                    if (selectedStar== null)
+                    {
+                        selectedStar = hoveredStar;
+                        AudioManager.PlaySFX("starPress");
+                    }
 
-                    AudioManager.PlaySFX("starPress");
                     TogglePointerLine(true);
                 }
                 else
