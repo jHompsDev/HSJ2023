@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject MainMenuObject;
     [SerializeField] GameObject PauseMenuObject;
     [SerializeField] GameObject SettingsMenuObject;
+    [SerializeField] GameObject CreditsMenuObject;
 
     [SerializeField] GameObject LineView;
     [SerializeField] GameObject OptionsListView;
@@ -64,6 +65,11 @@ public class UIManager : MonoBehaviour
         PauseMenuObject.SetActive(toggle);
 
         if (GameManager.Instance.DebugMode) Debug.Log("Pause Menu Toggled " + (toggle ? "On" : "Off"));
+    }
+
+    public void ToggleCreditsUI(bool toggle)
+    {
+        CreditsMenuObject.SetActive(toggle); 
     }
 
     public void ToggleForeground(bool toggle)
@@ -198,12 +204,20 @@ public class UIManager : MonoBehaviour
         ToggleSettingsMenu(true);
     }
 
+    public void CreditsButton()
+    {
+        ToggleMainMenu(false);
+        ToggleCreditsUI(true);
+    }
+
     public void BackButton()
     {
         AudioManager.PlaySFX("uiButtPress");
 
         if (GameManager.Instance.state == GameState.MAINMENU) ToggleMainMenu(true);
         else TogglePauseUI(true);
+        if (CreditsMenuObject.activeSelf) ToggleCreditsUI(false);
+
         ToggleSettingsMenu(false);
     }
 

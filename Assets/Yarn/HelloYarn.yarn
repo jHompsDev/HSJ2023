@@ -15,8 +15,8 @@ I fear I am too late.
 title: Crashlanding
 position: -213,-556
 ---
-<<playBGM experiment2>>
 <<actor Adia>>
+<<playBGM experiment2>>
 Adia: <i> There's so much dust... But I seem to be okay. </i>
 Adia: <i> I need to leave the ship... I can already hear my Uncle arguing. </i>
 -> Leave the starship 
