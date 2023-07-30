@@ -8114,7 +8114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24705882}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10734,19 +10734,19 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 4898180052003144bb185b2490a72d09, type: 3}
   - name: Mum
     sprite: {fileID: 21300000, guid: 279ee3dd327e25d4a88b144190b7adc7, type: 3}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: d5ebc94b9647800408f90423ee4cde39, type: 3}
   - name: UncleKito
     sprite: {fileID: 21300000, guid: 413fb09b2e87f6d4ba2511cd82a89671, type: 3}
-    sound: {fileID: 0}
-  - name: AuntZuri
+    sound: {fileID: 8300000, guid: 4898180052003144bb185b2490a72d09, type: 3}
+  - name: AuntieZuri
     sprite: {fileID: 21300000, guid: bd93edb6cfdb5e54384e212c8aceb7c1, type: 3}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: d5ebc94b9647800408f90423ee4cde39, type: 3}
   - name: UncleSefu
     sprite: {fileID: 21300000, guid: 97112bc889a2da549b2ec0d28dffc417, type: 3}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: 4898180052003144bb185b2490a72d09, type: 3}
   - name: Granny
     sprite: {fileID: 21300000, guid: 005c4f05d51f9fd45bdeb053021ecff5, type: 3}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: d5ebc94b9647800408f90423ee4cde39, type: 3}
 --- !u!114 &1719473753
 MonoBehaviour:
   m_ObjectHideFlags: 0

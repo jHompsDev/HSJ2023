@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -71,19 +72,69 @@ public class UIManager : MonoBehaviour
     }
 
     [YarnCommand("actor")]
-    public static void ChangeActor(string actor = "blank")
+    public static IEnumerator ChangeActor(string actor = "blank")
     {
         UIManager ui = GameManager.Instance.uiManager;
+        Actor nextActor = ui.actors[0];
 
-        foreach (Actor a in ui.actors)
+        foreach(Actor a in ui.actors)
         {
-            if (a.name == actor) ui.currentActor = a;
+            if (a.name == actor) nextActor = a;
         }
 
-        GameManager.Instance.uiManager.ToggleLineDivider(actor != "blank");
+        float tMax = 0.33f;
 
+        float t;
+
+        if (ui.currentActor.name != "blank")
+        {
+            t = 0;
+
+            while (t < tMax)
+            {
+                t += Time.deltaTime;
+
+                ui.ActorRenderer.color = new Color(1f, 1f, 1f, 1 - (t / tMax));
+
+                yield return null;
+            }
+        }
+
+        ui.currentActor = nextActor;
         ui.ActorRenderer.sprite = ui.currentActor.sprite;
+        yield return new WaitForSeconds(0.33f);
+
+        if (ui.currentActor.name != "blank")
+        {
+            t = 0f;
+
+            while (t < tMax)
+            {
+                t += Time.deltaTime;
+
+                ui.ActorRenderer.color = new Color(1f, 1f, 1f, t / tMax);
+
+                yield return null;
+            }
+        }
+
+        yield break;
     }
+
+    //[YarnCommand("actor")]
+    //public static void ChangeActor(string actor = "blank")
+    //{
+    //    UIManager ui = GameManager.Instance.uiManager;
+
+    //    foreach (Actor a in ui.actors)
+    //    {
+    //        if (a.name == actor) ui.currentActor = a;
+    //    }
+
+    //    GameManager.Instance.uiManager.ToggleLineDivider(actor != "blank");
+
+    //    ui.ActorRenderer.sprite = ui.currentActor.sprite;
+    //}
 
     public void ToggleLineDivider(bool foo)
     {
