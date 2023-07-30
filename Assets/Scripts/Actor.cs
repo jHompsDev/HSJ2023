@@ -7,5 +7,5 @@ public struct Actor
 {
     public string name;
     public Sprite sprite;
-    // public sound sound;
+    public AudioClip sound;
 }

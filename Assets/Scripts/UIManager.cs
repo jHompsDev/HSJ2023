@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject LineView;
     [SerializeField] GameObject OptionsListView;
     [SerializeField] DialogueRunner DialogueRunner;
+    [SerializeField] GameObject LineDivider;
 
     [SerializeField] Image Background;
     [SerializeField] Image BGOverlay;
@@ -61,7 +62,7 @@ public class UIManager : MonoBehaviour
     }
 
     [YarnCommand("actor")]
-    public static void ChangeActor(string actor)
+    public static void ChangeActor(string actor = "blank")
     {
         UIManager ui = GameManager.Instance.uiManager;
 
@@ -70,9 +71,20 @@ public class UIManager : MonoBehaviour
             if (a.name == actor) ui.currentActor = a;
         }
 
-        if (actor == null) return;
+        GameManager.Instance.uiManager.ToggleLineDivider(actor != "blank");
 
         ui.ActorRenderer.sprite = ui.currentActor.sprite;
+    }
+
+    public void ToggleLineDivider(bool foo)
+    {
+        LineDivider.SetActive(foo);
+    }
+
+    public void PlayActorBlip()
+    {
+        Debug.Log("Blip");
+        if (currentActor.name != "blank") GameManager.Instance.audioManager.PlaySFX(currentActor.sound);
     }
 
     #region BUTTONS()
